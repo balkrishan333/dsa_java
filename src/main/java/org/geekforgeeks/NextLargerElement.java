@@ -4,6 +4,9 @@ package org.geekforgeeks;
 https://www.geeksforgeeks.org/next-greater-element/
  */
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
@@ -12,7 +15,7 @@ import java.util.Deque;
 
 public final class NextLargerElement {
 
-//    private static final Logger logger = LoggerFactory.getLogger(NextLargerElement.class);
+    private static final Logger logger = LoggerFactory.getLogger(NextLargerElement.class);
 
     public static void main(String[] args) throws Exception {
 
@@ -42,7 +45,6 @@ public final class NextLargerElement {
             long[] arr = inArrayList[i];
 
             long[] result = solution.nextLarger(arr);
-//            System.out.println(Arrays.toString(result));
             String resultString = Arrays.toString(result).substring(1).replaceFirst("]", "").replace(", ", " ");
             System.out.println(resultString);
         }
@@ -50,7 +52,7 @@ public final class NextLargerElement {
 
     long[] nextLarger(long[] arr) {
 
-//        logger.info("Input arr :" + Arrays.toString(arr));
+        logger.info("Input arr :" + Arrays.toString(arr));
         Deque<StackElement> stack = new ArrayDeque<>();
 
         StackElement firstElement = new StackElement(arr[0], 0);
@@ -58,7 +60,6 @@ public final class NextLargerElement {
 
         long[] result = new long[arr.length];
         for (int i = 1 ; i < arr.length ; i++) {
-//            int topIndex = i - 1;
             while (stack.peek() != null && stack.peek().getElement() < arr[i]) {
                 StackElement poppedElement = stack.pop();
                 result[poppedElement.getIndex()] = arr[i];
