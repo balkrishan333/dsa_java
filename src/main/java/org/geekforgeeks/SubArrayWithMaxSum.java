@@ -7,6 +7,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+/*
+https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
+ */
 public class SubArrayWithMaxSum {
 
     private static Logger logger = LoggerFactory.getLogger(SubArrayWithMaxSum.class);
