@@ -11,10 +11,10 @@ public final class Find_Kth_SmallestElement {
 
     public static void main(String[] args) throws Exception {
 //        int[] arr = {7, 10, 4, 3, 20, 15};
-//        int[] arr = {7, 10, 4,  20, 15};
+        int[] arr = {7, 10, 4,  20, 15};
 //        int[] arr = {10, 5, 7, 4, 2, 1, 3, 6, 8, 9};
-        int[] arr = {12,5,787,1,23};
-        int k = 2;
+//        int[] arr = {12,5,787,1,23};
+        int k = 4;
 
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
        /* BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -33,8 +33,8 @@ public final class Find_Kth_SmallestElement {
 
         int kthSmallest;
 //        kthSmallest = smallestElement.approach_1_sorting(arr, k);
-        kthSmallest = smallestElement.approach_2_minHeap(arr, k);
-//        kthSmallest = smallestElement.approach_3_maxHeap(arr, k);
+//        kthSmallest = smallestElement.approach_2_minHeap(arr, k);
+        kthSmallest = smallestElement.approach_3_maxHeap(arr, k);
 //        kthSmallest = smallestElement.approach_4_quickSelect(arr, k);
         System.out.println("kthSmallest = " + kthSmallest);
     }
@@ -58,15 +58,15 @@ public final class Find_Kth_SmallestElement {
     }
 
     int approach_3_maxHeap(int[] arr, int k) {
-        for (int i = 0; i < k; i++) {
+        for (int i = parent(arr.length-1); i >=0 ; i--) {
             maxHeapify(arr, i, k);
         }
         logger.info("Arrays.toString(arr) = " + Arrays.toString(arr));
 
-        for (int i = k; i < arr.length-1 ; i++) {
+        for (int i = k; i < arr.length ; i++) {
             if (arr[i] < arr[0]) {
                 swap(arr, i, 0);
-                maxHeapify(arr, 0, arr.length-1);
+                maxHeapify(arr, 0, k);
             }
         }
 
@@ -118,17 +118,17 @@ public final class Find_Kth_SmallestElement {
 
         int left = left(start);
         int right = right(start);
-        int smallest = start;
+        int largest = start;
 
-        if (left <= heapSize && arr[left] > arr[smallest]) {
-            smallest = left;
+        if (left < heapSize && arr[left] > arr[largest]) {
+            largest = left;
         }
-        if (right <= heapSize && arr[right] > arr[smallest]) {
-            smallest = right;
+        if (right < heapSize && arr[right] > arr[largest]) {
+            largest = right;
         }
-        if (smallest != start) {
-            swap(arr, start, smallest);
-            minHeapify(arr, smallest, heapSize);
+        if (largest != start) {
+            swap(arr, start, largest);
+            maxHeapify(arr, largest, heapSize);
         }
     }
 
