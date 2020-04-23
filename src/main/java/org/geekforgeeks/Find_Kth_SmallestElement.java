@@ -3,21 +3,18 @@ package org.geekforgeeks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public final class Find_Kth_SmallestElement {
 
-    private static Logger logger = LoggerFactory.getLogger(Find_Kth_SmallestElement.class);
+    private static final Logger logger = LoggerFactory.getLogger(Find_Kth_SmallestElement.class);
 
     public static void main(String[] args) throws Exception {
-//        int[] arr = {7, 10, 4, 3, 20, 15};
-        int[] arr = {7, 10, 4,  20, 15};
-//        int[] arr = {10, 5, 7, 4, 2, 1, 3, 6, 8, 9};
-//        int[] arr = {12,5,787,1,23};
-        int k = 4;
 
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
-       /* BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int noOfTests = Integer.parseInt(reader.readLine());
         for (int i = 0; i < noOfTests; i++) {
             int arrSize = Integer.parseInt(reader.readLine());
@@ -29,14 +26,7 @@ public final class Find_Kth_SmallestElement {
             int k = Integer.parseInt(reader.readLine());
             int kthSmallest = smallestElement.approach_4_quickSelect(arr, k);
             System.out.println(kthSmallest);
-        }*/
-
-        int kthSmallest;
-//        kthSmallest = smallestElement.approach_1_sorting(arr, k);
-//        kthSmallest = smallestElement.approach_2_minHeap(arr, k);
-        kthSmallest = smallestElement.approach_3_maxHeap(arr, k);
-//        kthSmallest = smallestElement.approach_4_quickSelect(arr, k);
-        System.out.println("kthSmallest = " + kthSmallest);
+        }
     }
 
     int approach_1_sorting(int[] arr, int k) {
@@ -74,20 +64,24 @@ public final class Find_Kth_SmallestElement {
     }
 
     int approach_4_quickSelect(int[] arr, int k) {
-        return quickSelect(arr, k, 0, arr.length-1);
+        return quickSelect(arr,0, arr.length-1,  k);
     }
 
-    private int quickSelect(int[] arr, int k, int lo, int hi) {
+    private int quickSelect(int[] arr, int lo, int hi, int k) {
 
-        int pivot = quickSortPartition(arr, lo, hi);
-        if (pivot == k-1) {
-            return arr[pivot];
-        }
-        if (pivot > k-1) {
-           return quickSelect(arr, k, 0, pivot-1);
-        } else {
-            return quickSelect(arr, k, pivot + 1, hi);
-        }
+        int pos = quickSortPartition(arr, lo, hi);
+
+        // If position is same as k
+        if (pos - lo == k - 1)
+            return arr[pos];
+
+        // If position is more, recur for
+        // left subarray
+        if (pos - lo > k - 1)
+            return quickSelect(arr, lo, pos - 1, k);
+
+        // Else recur for right subarray
+        return quickSelect(arr, pos + 1, hi, k - pos + lo - 1);
     }
 
     private void minHeapify(int[] arr, int start, int heapSize) {
@@ -153,22 +147,26 @@ public final class Find_Kth_SmallestElement {
     }
 
     private int quickSortPartition(int[] arr, int lo, int hi) {
+        //middle element as pivot
         int pivot = (lo + hi) / 2;
-        int i = lo;
-        int j = hi;
+        //swap pivot with last element - Intorduction to Algo. by coreman
+        swap(arr, pivot, hi);
 
-        while (arr[i] < arr[pivot]) {
-            i++;
+        int i = lo-1;
+        int j = i+1;
+        while (j <= hi-1) {
+            //compare element with pivot - since pivot is at end
+            if (arr[j] < arr[hi]) {
+                //if jth element is less than pivot, it is at right place, move pointer and swap
+                //to make sure this element is at new pointer
+                i++;
+                swap(arr, i, j);
+            }
+            j++;
         }
-
-        while (arr[j] > arr[pivot]) {
-            j--;
-        }
-
-        if (i < j) {
-            swap(arr, i, j);
-        }
-        return i;
+        //swap pivot with current pointer to make sure pivot is at right place
+        swap(arr, i+1, hi);
+        return i+1;
     }
 
     private void swap(int[] arr, int i, int j) {
@@ -176,5 +174,4 @@ public final class Find_Kth_SmallestElement {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
 }
