@@ -5,34 +5,6 @@ import java.util.List;
 
 public final class RemoveDuplicates_1 {
 
-    class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-
-        Node(int val, Node next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append(val).append(", ");
-
-            Node node = this.next;
-
-            while (node != null) {
-                sb.append(node.val).append(", ");
-                node = node.next;
-            }
-            return sb.toString();
-        }
-    }
-
     public static void main(String[] args) {
         RemoveDuplicates_1 duplicates = new RemoveDuplicates_1();
         Node head = duplicates.constructList();
