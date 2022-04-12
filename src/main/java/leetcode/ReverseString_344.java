@@ -6,12 +6,25 @@ import java.util.Arrays;
 https://leetcode.com/explore/learn/card/recursion-i/250/principle-of-recursion/1440/
 
  */
-public class ReverseString {
+public class ReverseString_344 {
 
     public static void main(String[] args) {
         char[] chars = {'b','a','l','a'};
-        reverseString(chars);
+//        reverseString(chars);
+        reverseString_v2(chars); //preferred
         System.out.println(Arrays.toString(chars));
+    }
+
+    public static void reverseString_v2(char[] s) {
+        if(s.length == 1) {
+            return;
+        }
+
+        for(int i=0,j=s.length-1; i <= j; i++,j--) {
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+        }
     }
 
     public static void reverseString(char[] s) {

@@ -1,4 +1,4 @@
-package geekforgeeks;
+package leetcode;
 
 public class LongestPlaindrome_5 {
 
