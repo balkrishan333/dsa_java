@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,7 +10,10 @@ public class ZigZagConversion_6 {
         String s = "PAYPALISHIRING";
         int noRows = 4;
 
-        System.out.println(convert_v2(s, noRows));
+
+        int[] arr = {2,3,4};
+        System.out.println(Arrays.binarySearch(arr, 5));
+        //System.out.println(convert_v2(s, noRows));
     }
 
     public static String convert_v2(String s, int numRows) {
