@@ -8,8 +8,9 @@ public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-
     TreeNode next; // Added for problem NextRightPointer
+
+    TreeNode parent; //Add for inorder successor LC 510
 
     TreeNode() {}
     TreeNode(int x) { val = x; }
@@ -33,8 +34,8 @@ public class TreeNode {
                     parent.left = node;
                     nodes.offer(node);
                 }
-
-                if (input[++i] != null) {
+                i++;
+                if (i < input.length && input[i] != null) {
                     TreeNode node = new TreeNode();
                     node.val = input[i];
                     parent.right = node;
