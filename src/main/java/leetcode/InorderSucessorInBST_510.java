@@ -20,6 +20,11 @@ public class InorderSucessorInBST_510 {
         }
     }
 
+    /*
+          1. If Right child exists, Inorder traversal of right subtree and return first element
+          2. If both left and right are null, start moving to parent and find either a node with higher value or
+             root. Return which ever found first
+     */
     private TreeNode findSuccessor(TreeNode node) {
 
         if (node.right != null) {
