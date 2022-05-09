@@ -1,8 +1,8 @@
 package hackerrank.interviewkit.Arrays;
 
 import hackerrank.interviewkit.sorting.FraudulentActivityNotifications;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TestFraudulentActivityNotifications {
 
@@ -13,6 +13,6 @@ public class TestFraudulentActivityNotifications {
         FraudulentActivityNotifications notifications = new FraudulentActivityNotifications();
         int count = notifications.countNotifications(arr, trailingDay);
 
-        Assert.assertEquals(1, count);
+        Assertions.assertEquals(1, count);
     }
 }

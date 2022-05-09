@@ -1,7 +1,7 @@
 package hackerrank.interviewkit.greedyalgorithm;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TestLuckBalance {
 
@@ -17,7 +17,7 @@ public class TestLuckBalance {
         };
 
         LuckBalance luckBalance = new LuckBalance();
-        Assert.assertEquals(21, luckBalance.calc(k, contests));
+        Assertions.assertEquals(21, luckBalance.calc(k, contests));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class TestLuckBalance {
         };
 
         LuckBalance luckBalance = new LuckBalance();
-        Assert.assertEquals(29, luckBalance.calc(k, contests));
+        Assertions.assertEquals(29, luckBalance.calc(k, contests));
     }
     @Test
     public void test_3() {
@@ -50,7 +50,7 @@ public class TestLuckBalance {
         };
 
         LuckBalance luckBalance = new LuckBalance();
-        Assert.assertEquals(42, luckBalance.calc(k, contests));
+        Assertions.assertEquals(42, luckBalance.calc(k, contests));
     }
 
     @Test
@@ -65,6 +65,6 @@ public class TestLuckBalance {
         };
 
         LuckBalance luckBalance = new LuckBalance();
-        Assert.assertEquals(-25, luckBalance.calc(k, contests));
+        Assertions.assertEquals(-25, luckBalance.calc(k, contests));
     }
 }

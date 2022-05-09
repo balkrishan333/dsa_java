@@ -1,8 +1,8 @@
 package geekforgeeks;
 
 import geekforgeeks.MaximumOfMinimumForEveryWindow;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TestMaximumOfMinimumForEveryWindow {
 
@@ -13,7 +13,7 @@ public class TestMaximumOfMinimumForEveryWindow {
         MaximumOfMinimumForEveryWindow solution = new MaximumOfMinimumForEveryWindow();
         int[] result = solution.findMaximum(arr);
 
-        Assert.assertArrayEquals(new int[]{70, 30, 20, 10, 10, 10, 10}, result);
+        Assertions.assertArrayEquals(new int[]{70, 30, 20, 10, 10, 10, 10}, result);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class TestMaximumOfMinimumForEveryWindow {
         MaximumOfMinimumForEveryWindow solution = new MaximumOfMinimumForEveryWindow();
         int[] result = solution.findMaximum(arr);
 
-        Assert.assertArrayEquals(new int[]{30, 20, 10}, result);
+        Assertions.assertArrayEquals(new int[]{30, 20, 10}, result);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class TestMaximumOfMinimumForEveryWindow {
         MaximumOfMinimumForEveryWindow solution = new MaximumOfMinimumForEveryWindow();
         int[] result = solution.findMaximum(arr);
 
-        Assert.assertArrayEquals(new int[]{10}, result);
+        Assertions.assertArrayEquals(new int[]{10}, result);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class TestMaximumOfMinimumForEveryWindow {
         MaximumOfMinimumForEveryWindow solution = new MaximumOfMinimumForEveryWindow();
         int[] result = solution.findMaximum(arr);
 
-        Assert.assertArrayEquals(new int[]{10, 10, 10}, result);
+        Assertions.assertArrayEquals(new int[]{10, 10, 10}, result);
     }
 
     @Test
@@ -53,6 +53,6 @@ public class TestMaximumOfMinimumForEveryWindow {
         MaximumOfMinimumForEveryWindow solution = new MaximumOfMinimumForEveryWindow();
         int[] result = solution.findMaximum(arr);
 
-        Assert.assertArrayEquals(new int[]{30, 20, 10}, result);
+        Assertions.assertArrayEquals(new int[]{30, 20, 10}, result);
     }
 }

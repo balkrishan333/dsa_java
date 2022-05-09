@@ -1,8 +1,10 @@
 package hackerrank;
 
 import hackerrank.CutTheSticks;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TestCutTheSticks {
 
@@ -11,7 +13,7 @@ public class TestCutTheSticks {
         int[] arr = {5, 4, 4, 2, 2, 8};
         CutTheSticks sticks = new CutTheSticks();
         int[] count = sticks.count(arr);
-        Assert.assertArrayEquals(new int[]{6,4,2,1}, count);
+        assertArrayEquals(new int[]{6,4,2,1}, count);
     }
 
     @Test
@@ -19,7 +21,7 @@ public class TestCutTheSticks {
         int[] arr = {1, 2, 3 ,4 ,3 ,3 ,2, 1};
         CutTheSticks sticks = new CutTheSticks();
         int[] count = sticks.count(arr);
-        Assert.assertArrayEquals(new int[]{8,6,4,1}, count);
+        assertArrayEquals(new int[]{8,6,4,1}, count);
     }
 
     @Test
@@ -27,7 +29,7 @@ public class TestCutTheSticks {
         int[] arr = {1,2,3};
         CutTheSticks sticks = new CutTheSticks();
         int[] count = sticks.count(arr);
-        Assert.assertArrayEquals(new int[]{3,2,1}, count);
+        assertArrayEquals(new int[]{3,2,1}, count);
     }
 
     @Test
@@ -35,6 +37,6 @@ public class TestCutTheSticks {
         int[] arr = {2,2,2,2,2};
         CutTheSticks sticks = new CutTheSticks();
         int[] count = sticks.count(arr);
-        Assert.assertArrayEquals(new int[]{5}, count);
+        assertArrayEquals(new int[]{5}, count);
     }
 }

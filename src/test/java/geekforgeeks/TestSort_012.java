@@ -1,9 +1,10 @@
 package geekforgeeks;
 
 import geekforgeeks.Sort_012;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 public class TestSort_012 {
 

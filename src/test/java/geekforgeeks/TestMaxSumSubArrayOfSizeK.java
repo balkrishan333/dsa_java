@@ -1,10 +1,10 @@
 package geekforgeeks;
 
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import geekforgeeks.MaxSumSubArrayOfSizeK;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public final class TestMaxSumSubArrayOfSizeK {
 

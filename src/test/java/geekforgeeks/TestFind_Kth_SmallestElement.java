@@ -1,8 +1,8 @@
 package geekforgeeks;
 
 import geekforgeeks.Find_Kth_SmallestElement;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TestFind_Kth_SmallestElement {
 
@@ -13,13 +13,13 @@ public class TestFind_Kth_SmallestElement {
 
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
         //quick sort
-        Assert.assertEquals(5, smallestElement.approach_1_sorting(arr, k));
+        Assertions.assertEquals(5, smallestElement.approach_1_sorting(arr, k));
         //quick select
-        Assert.assertEquals(5, smallestElement.approach_4_quickSelect(arr, k));
+        Assertions.assertEquals(5, smallestElement.approach_4_quickSelect(arr, k));
         //min heap
-        Assert.assertEquals(5, smallestElement.approach_2_minHeap(arr, k));
+        Assertions.assertEquals(5, smallestElement.approach_2_minHeap(arr, k));
         //max heap
-        Assert.assertEquals(5, smallestElement.approach_3_maxHeap(arr, k));
+        Assertions.assertEquals(5, smallestElement.approach_3_maxHeap(arr, k));
     }
 
     @Test
@@ -30,13 +30,13 @@ public class TestFind_Kth_SmallestElement {
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
 
         //quick sort
-        Assert.assertEquals(3, smallestElement.approach_1_sorting(arr, k));
+        Assertions.assertEquals(3, smallestElement.approach_1_sorting(arr, k));
         //quick select
-        Assert.assertEquals(3, smallestElement.approach_4_quickSelect(arr, k));
+        Assertions.assertEquals(3, smallestElement.approach_4_quickSelect(arr, k));
         //min heap
-        Assert.assertEquals(3, smallestElement.approach_2_minHeap(arr, k));
+        Assertions.assertEquals(3, smallestElement.approach_2_minHeap(arr, k));
         //max heap
-        Assert.assertEquals(3, smallestElement.approach_3_maxHeap(arr, k));
+        Assertions.assertEquals(3, smallestElement.approach_3_maxHeap(arr, k));
     }
 
     @Test
@@ -47,13 +47,13 @@ public class TestFind_Kth_SmallestElement {
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
 
         //quick sort
-        Assert.assertEquals(7, smallestElement.approach_1_sorting(arr, k));
+        Assertions.assertEquals(7, smallestElement.approach_1_sorting(arr, k));
         //quick select
-        Assert.assertEquals(7, smallestElement.approach_4_quickSelect(arr, k));
+        Assertions.assertEquals(7, smallestElement.approach_4_quickSelect(arr, k));
         //min heap
-        Assert.assertEquals(7, smallestElement.approach_2_minHeap(arr, k));
+        Assertions.assertEquals(7, smallestElement.approach_2_minHeap(arr, k));
         //max heap
-        Assert.assertEquals(7, smallestElement.approach_3_maxHeap(arr, k));
+        Assertions.assertEquals(7, smallestElement.approach_3_maxHeap(arr, k));
     }
 
     @Test
@@ -64,12 +64,12 @@ public class TestFind_Kth_SmallestElement {
         Find_Kth_SmallestElement smallestElement = new Find_Kth_SmallestElement();
 
         //quick sort
-        Assert.assertEquals(15, smallestElement.approach_1_sorting(arr, k));
+        Assertions.assertEquals(15, smallestElement.approach_1_sorting(arr, k));
         //quick select
-        Assert.assertEquals(15, smallestElement.approach_4_quickSelect(arr, k));
+        Assertions.assertEquals(15, smallestElement.approach_4_quickSelect(arr, k));
         //min heap
-        Assert.assertEquals(15, smallestElement.approach_2_minHeap(arr, k));
+        Assertions.assertEquals(15, smallestElement.approach_2_minHeap(arr, k));
         //max heap
-        Assert.assertEquals(15, smallestElement.approach_3_maxHeap(arr, k));
+        Assertions.assertEquals(15, smallestElement.approach_3_maxHeap(arr, k));
     }
 }

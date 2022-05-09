@@ -1,10 +1,10 @@
 package geekforgeeks;
 
-import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import geekforgeeks.CountSubArrayWithKDistinctElements;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TestCountSubArrayWithKDistinctElements {
 
