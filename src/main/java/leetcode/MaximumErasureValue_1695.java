@@ -53,7 +53,7 @@ public class MaximumErasureValue_1695 {
         return Math.max(result, Arrays.stream(nums, start, end+1).sum());
     }
 
-    public int maximumUniqueSubarray_withSet(int[] nums) {
+   /* public int maximumUniqueSubarray_withSet(int[] nums) {
         Set<Integer> indexes = new HashSet<>();
 
         int start =0, end =0;
@@ -74,5 +74,5 @@ public class MaximumErasureValue_1695 {
             indexes.put(nums[i], i);
         }
         return Math.max(result, Arrays.stream(nums, start, end+1).sum());
-    }
+    }*/
 }
