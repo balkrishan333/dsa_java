@@ -44,35 +44,12 @@ public class MaximumErasureValue_1695 {
                 result = Math.max(result, sum);
                 sum = sum - Arrays.stream(nums, start, index+1).sum();
                 start = index+1;
-            }// else {
-                sum = sum + nums[i];
-            //}
+            }
+            sum = sum + nums[i];
+
             end = i;
             indexes.put(nums[i], i);
         }
         return Math.max(result, Arrays.stream(nums, start, end+1).sum());
     }
-
-   /* public int maximumUniqueSubarray_withSet(int[] nums) {
-        Set<Integer> indexes = new HashSet<>();
-
-        int start =0, end =0;
-        int result = 0;
-        int sum = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            boolean index = indexes.contains(nums[i]);
-
-            if (index) {
-                result = Math.max(result, sum);
-                sum = sum - Arrays.stream(nums, start, index+1).sum();
-                start = index+1;
-            }// else {
-                sum = sum + nums[i];
-            //}
-            end = i;
-            indexes.put(nums[i], i);
-        }
-        return Math.max(result, Arrays.stream(nums, start, end+1).sum());
-    }*/
 }
