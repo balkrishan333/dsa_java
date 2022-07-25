@@ -4,9 +4,28 @@ public class DivideTwoInteger_29 {
 
     public static void main(String[] args) {
         DivideTwoInteger_29 obj = new DivideTwoInteger_29();
-        int dividend = 58, divisor = 5;
+        int dividend = 10, divisor = 3;
 
-        System.out.println(obj.divide(dividend, divisor));
+        System.out.println(obj.divide_v2(dividend, divisor));
+    }
+
+    public int divide_v2(int dividend, int divisor) {
+
+        int result = 0;
+
+        if (dividend == 0) {
+            return result;
+        }
+        boolean isPositive = (dividend > 0 && divisor > 0) || (dividend < 0 && divisor < 0);
+        dividend = Math.abs(dividend);
+        divisor = Math.abs(divisor);
+
+        while (dividend > divisor) {
+            dividend -= divisor;
+            result++;
+        }
+
+        return  isPositive ? result : -result;
     }
 
     public int divide(int dividend, int divisor) {

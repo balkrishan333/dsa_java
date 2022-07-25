@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.TreeNode;
+
 public class RootToLeafSum_1022 {
 
     private int sum;

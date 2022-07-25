@@ -1,19 +1,19 @@
-package leetcode;
+package leetcode.common;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNode {
 
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode next; // Added for problem NextRightPointer
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode next; // Added for problem NextRightPointer
 
-    TreeNode parent; //Add for inorder successor LC 510
+    public TreeNode parent; //Add for inorder successor LC 510
 
-    TreeNode() {}
-    TreeNode(int x) { val = x; }
+    public TreeNode() {}
+    public TreeNode(int x) { val = x; }
 
     public TreeNode createTree(Integer[] input) {
         TreeNode root = null;

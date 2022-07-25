@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.ListNode;
+
 public class SwappingNodes_1721 {
 
     public static void main(String[] args) {

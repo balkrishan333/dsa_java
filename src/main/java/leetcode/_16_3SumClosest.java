@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class _15_3Sum {
+public class _16_3SumClosest {
 
     public static void main(String[] args) {
-        _15_3Sum obj = new _15_3Sum();
+        _16_3SumClosest obj = new _16_3SumClosest();
 
-        int[] nums = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
-        System.out.println(obj.threeSum(nums));
+        int[] nums = {0,0,0};
+        int target = 1;
+        System.out.println(obj.threeSum(nums, target));
     }
 
     /*
@@ -19,36 +20,23 @@ public class _15_3Sum {
         3. Iterate through rest of the array with 2 pointers (start and end)
         4. While iterating find 2 elements with sum = target - nums[i]
      */
-    public List<List<Integer>> threeSum(int[] nums) {
-
-        if (nums == null || nums.length < 3) {
-            return new ArrayList<>();
-        }
+    public int threeSum(int[] nums, int target) {
 
         Arrays.sort(nums);
-        List<List<Integer>> res = new ArrayList<>();
+
+        int closest = Integer.MAX_VALUE;
 
         for (int i = 0; i < nums.length; i++) {
-            if (i == 0 || nums[i-1] != nums[i]) {
-                int low = i+1;
-                int high = nums.length-1;
-                int sum = 0-nums[i];
+            int low = i + 1;
+            int high = nums.length - 1;
+            int sum = target - nums[i];
 
-                while (low < high) {
-                    if (nums[low] + nums[high] == sum) {
-                        res.add(List.of(nums[i], nums[low], nums[high]));
-                        low++;
-                        high--;
-                        //skip all elements with same value, to avoid duplicates
-                        while (high < nums.length-1 && low < high && nums[high] == nums[high+1]) {
-                            high--;
-                        }
-                        //skip all elements with same value, to avoid duplicates
-                        while (low > 0 && low < high && nums[low-1] == nums[low]) {
-                            low++;
-                        }
-
-                    } else if (nums[low] + nums[high] > sum) {
+            while (low < high) {
+                if (nums[low] + nums[high] == sum) {
+                    return target;
+                } else {
+                    closest = Math.min(closest, target - Math.abs(nums[i] + nums[low] + nums[high]));
+                    if (nums[low] + nums[high] > sum) {
                         high--;
                     } else {
                         low++;
@@ -56,6 +44,6 @@ public class _15_3Sum {
                 }
             }
         }
-        return res;
+        return Math.abs(closest);
     }
 }

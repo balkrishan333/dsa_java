@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.ListNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

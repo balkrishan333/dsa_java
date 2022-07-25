@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.TreeNode;
+
 public class BalancedBinaryTree_110 {
 
     public static void main(String[] args) {

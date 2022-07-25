@@ -1,7 +1,6 @@
 package leetcode;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import leetcode.common.TreeNode;
 
 public class InorderSucessorInBST_510 {
 
