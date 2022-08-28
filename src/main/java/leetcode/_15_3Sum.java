@@ -7,10 +7,10 @@ import java.util.List;
 public class _15_3Sum {
 
     public static void main(String[] args) {
-        _15_3Sum obj = new _15_3Sum();
+        _16_3SumClosest obj = new _16_3SumClosest();
 
         int[] nums = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
-        System.out.println(obj.threeSum(nums));
+        //System.out.println(obj.threeSum(nums));
     }
 
     /*
