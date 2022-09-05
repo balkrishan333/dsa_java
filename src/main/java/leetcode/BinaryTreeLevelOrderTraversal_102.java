@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -13,20 +13,20 @@ public class BinaryTreeLevelOrderTraversal_102 {
         BinaryTreeLevelOrderTraversal_102 obj = new BinaryTreeLevelOrderTraversal_102();
 
         Integer[] input = {3,9,20,null,null,15,7};
-        TreeNode root = new TreeNode().createTree(input);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
         List<List<Integer>> levelOrder = obj.levelOrder(root);
 
         System.out.println(levelOrder);
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder(BinaryTreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 
         if(root == null) {
             return result;
         }
 
-        Queue<TreeNode> nodes = new ArrayDeque<>();
+        Queue<BinaryTreeNode> nodes = new ArrayDeque<>();
         nodes.add(root);
 
         while(!nodes.isEmpty()) {
@@ -34,7 +34,7 @@ public class BinaryTreeLevelOrderTraversal_102 {
             int size = nodes.size();
 
             for(int i=0; i< size; i++) {
-                TreeNode node = nodes.poll();
+                BinaryTreeNode node = nodes.poll();
 
                 if(node.left != null) {
                     nodes.add(node.left);

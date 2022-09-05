@@ -1,16 +1,16 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 public class InorderSucessorInBST_510 {
 
-    private TreeNode successor;
+    private BinaryTreeNode successor;
 
     public static void main(String[] args) {
         InorderSucessorInBST_510 obj = new InorderSucessorInBST_510();
-        TreeNode node = createTree_4();
+        BinaryTreeNode node = createTree_4();
 
-        TreeNode successor = obj.findSuccessor(node);
+        BinaryTreeNode successor = obj.findSuccessor(node);
 
         if (successor == null) {
             System.out.println("null");
@@ -24,14 +24,14 @@ public class InorderSucessorInBST_510 {
           2. If both left and right are null, start moving to parent and find either a node with higher value or
              root. Return which ever found first
      */
-    private TreeNode findSuccessor(TreeNode node) {
+    private BinaryTreeNode findSuccessor(BinaryTreeNode node) {
 
         if (node.right != null) {
             inorderTraversal(node.right);
             return successor;
         }
 
-        TreeNode parent = node.parent;
+        BinaryTreeNode parent = node.parent;
         while (true) {
             if (parent == null) {
                 return parent;
@@ -42,7 +42,7 @@ public class InorderSucessorInBST_510 {
         }
     }
 
-    private void inorderTraversal(TreeNode node) {
+    private void inorderTraversal(BinaryTreeNode node) {
         if (node == null) {
             return;
         }
@@ -56,10 +56,10 @@ public class InorderSucessorInBST_510 {
     }
 
     //expected 2
-    public static TreeNode createTree_1() {
-        TreeNode node_1 = new TreeNode(1);
-        TreeNode node_2 = new TreeNode(2);
-        TreeNode node_3 = new TreeNode(3);
+    public static BinaryTreeNode createTree_1() {
+        BinaryTreeNode node_1 = new BinaryTreeNode(1);
+        BinaryTreeNode node_2 = new BinaryTreeNode(2);
+        BinaryTreeNode node_3 = new BinaryTreeNode(3);
 
         node_2.left = node_1;
         node_2.right = node_3;
@@ -71,13 +71,13 @@ public class InorderSucessorInBST_510 {
     }
 
     //expected null
-    public static TreeNode createTree_2() {
-        TreeNode node_1 = new TreeNode(1);
-        TreeNode node_2 = new TreeNode(2);
-        TreeNode node_3 = new TreeNode(3);
-        TreeNode node_4 = new TreeNode(4);
-        TreeNode node_5 = new TreeNode(5);
-        TreeNode node_6 = new TreeNode(6);
+    public static BinaryTreeNode createTree_2() {
+        BinaryTreeNode node_1 = new BinaryTreeNode(1);
+        BinaryTreeNode node_2 = new BinaryTreeNode(2);
+        BinaryTreeNode node_3 = new BinaryTreeNode(3);
+        BinaryTreeNode node_4 = new BinaryTreeNode(4);
+        BinaryTreeNode node_5 = new BinaryTreeNode(5);
+        BinaryTreeNode node_6 = new BinaryTreeNode(6);
 
         node_1.parent = node_2;
 
@@ -99,18 +99,18 @@ public class InorderSucessorInBST_510 {
     }
 
     //expected 17
-    public static TreeNode createTree_3() {
-        TreeNode node_2 = new TreeNode(2);
-        TreeNode node_3 = new TreeNode(3);
-        TreeNode node_4 = new TreeNode(4);
-        TreeNode node_6 = new TreeNode(6);
-        TreeNode node_7 = new TreeNode(7);
-        TreeNode node_9 = new TreeNode(9);
-        TreeNode node_13 = new TreeNode(13);
-        TreeNode node_15 = new TreeNode(15);
-        TreeNode node_17 = new TreeNode(17);
-        TreeNode node_18 = new TreeNode(18);
-        TreeNode node_20 = new TreeNode(20);
+    public static BinaryTreeNode createTree_3() {
+        BinaryTreeNode node_2 = new BinaryTreeNode(2);
+        BinaryTreeNode node_3 = new BinaryTreeNode(3);
+        BinaryTreeNode node_4 = new BinaryTreeNode(4);
+        BinaryTreeNode node_6 = new BinaryTreeNode(6);
+        BinaryTreeNode node_7 = new BinaryTreeNode(7);
+        BinaryTreeNode node_9 = new BinaryTreeNode(9);
+        BinaryTreeNode node_13 = new BinaryTreeNode(13);
+        BinaryTreeNode node_15 = new BinaryTreeNode(15);
+        BinaryTreeNode node_17 = new BinaryTreeNode(17);
+        BinaryTreeNode node_18 = new BinaryTreeNode(18);
+        BinaryTreeNode node_20 = new BinaryTreeNode(20);
 
         node_2.parent = node_3;
 
@@ -146,18 +146,18 @@ public class InorderSucessorInBST_510 {
     }
 
     //expected 15
-    public static TreeNode createTree_4() {
-        TreeNode node_2 = new TreeNode(2);
-        TreeNode node_3 = new TreeNode(3);
-        TreeNode node_4 = new TreeNode(4);
-        TreeNode node_6 = new TreeNode(6);
-        TreeNode node_7 = new TreeNode(7);
-        TreeNode node_9 = new TreeNode(9);
-        TreeNode node_13 = new TreeNode(13);
-        TreeNode node_15 = new TreeNode(15);
-        TreeNode node_17 = new TreeNode(17);
-        TreeNode node_18 = new TreeNode(18);
-        TreeNode node_20 = new TreeNode(20);
+    public static BinaryTreeNode createTree_4() {
+        BinaryTreeNode node_2 = new BinaryTreeNode(2);
+        BinaryTreeNode node_3 = new BinaryTreeNode(3);
+        BinaryTreeNode node_4 = new BinaryTreeNode(4);
+        BinaryTreeNode node_6 = new BinaryTreeNode(6);
+        BinaryTreeNode node_7 = new BinaryTreeNode(7);
+        BinaryTreeNode node_9 = new BinaryTreeNode(9);
+        BinaryTreeNode node_13 = new BinaryTreeNode(13);
+        BinaryTreeNode node_15 = new BinaryTreeNode(15);
+        BinaryTreeNode node_17 = new BinaryTreeNode(17);
+        BinaryTreeNode node_18 = new BinaryTreeNode(18);
+        BinaryTreeNode node_20 = new BinaryTreeNode(20);
 
         node_2.parent = node_3;
 

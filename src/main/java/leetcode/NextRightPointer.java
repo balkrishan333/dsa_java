@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,8 +15,8 @@ public class NextRightPointer {
     private static final Integer[] input = {1,2,3,4,5,null,7};
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode().createTree(input);
-        TreeNode result = connect(root);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
+        BinaryTreeNode result = connect(root);
         System.out.println("result = " + result);
     }
 
@@ -31,13 +31,13 @@ public class NextRightPointer {
         2.4 Point the next of n1 to n2
         2.5 Assign n2 to n1
      */
-    public static TreeNode connect(TreeNode root) {
+    public static BinaryTreeNode connect(BinaryTreeNode root) {
 
         if(root == null) {
             return null;
         }
 
-        Queue<TreeNode> q = new LinkedList<>();
+        Queue<BinaryTreeNode> q = new LinkedList<>();
 
         if(root.left != null) {
             q.offer(root.left);
@@ -49,7 +49,7 @@ public class NextRightPointer {
 
         while(q.size() > 0) {
             int size = q.size();
-            TreeNode n1 = q.poll();
+            BinaryTreeNode n1 = q.poll();
             size--;
 
             if(n1.left != null) {
@@ -61,7 +61,7 @@ public class NextRightPointer {
             }
 
             while(size > 0) {
-                TreeNode n2 = q.poll();
+                BinaryTreeNode n2 = q.poll();
                 n1.next = n2;
 
                 if(n2.left != null) {

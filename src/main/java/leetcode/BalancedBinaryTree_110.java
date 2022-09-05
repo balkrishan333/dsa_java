@@ -1,18 +1,18 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 public class BalancedBinaryTree_110 {
 
     public static void main(String[] args) {
         BalancedBinaryTree_110 obj = new BalancedBinaryTree_110();
         Integer[] input = {1,2,3,4,5,6,null,8};
-        TreeNode root = new TreeNode().createTree(input);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
 
         System.out.println(obj.isBalanced(root));
     }
 
-    public boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(BinaryTreeNode root) {
 
         if(root == null) {
             return true;
@@ -24,7 +24,7 @@ public class BalancedBinaryTree_110 {
         return left.isBalanced && right.isBalanced && Math.abs(left.height-right.height) < 2;
     }
 
-    private HeightBalanced height(TreeNode node) {
+    private HeightBalanced height(BinaryTreeNode node) {
         if(node == null) {
             return new HeightBalanced(0, true);
         }

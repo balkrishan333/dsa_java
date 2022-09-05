@@ -1,23 +1,23 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 public class LowestCommonAncestor_236 {
 
     public static void main(String[] args) {
         LowestCommonAncestor_236 obj = new LowestCommonAncestor_236();
         Integer[] input = {3,5,1,6,2,0,8,null,null,7,4};
-        TreeNode root = new TreeNode().createTree(input);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
 
-        TreeNode p = new TreeNode();
-        TreeNode q = new TreeNode();
+        BinaryTreeNode p = new BinaryTreeNode();
+        BinaryTreeNode q = new BinaryTreeNode();
         p.val = 6;
         q.val = 8;
 
         System.out.println(obj.lowestCommonAncestor(root, p, q).val);
     }
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public BinaryTreeNode lowestCommonAncestor(BinaryTreeNode root, BinaryTreeNode p, BinaryTreeNode q) {
         //if any node is null, No common ancestor
         if (root == null || p == null || q == null) {
             return null;
@@ -51,7 +51,7 @@ public class LowestCommonAncestor_236 {
         return lowestCommonAncestor(root.right, p, q);
     }
 
-    private boolean exists(TreeNode node, TreeNode search) {
+    private boolean exists(BinaryTreeNode node, BinaryTreeNode search) {
         if (node == null) {
             return false;
         }

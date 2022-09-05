@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 public class RootToLeafSum_1022 {
 
@@ -10,13 +10,13 @@ public class RootToLeafSum_1022 {
         RootToLeafSum_1022 obj = new RootToLeafSum_1022();
 
         Integer[] input = {1, 0, 1, 0, 1, 0, 1};
-        TreeNode root = new TreeNode().createTree(input);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
 
         System.out.println(obj.sumRootToLeaf(root));
 
     }
 
-    public int sumRootToLeaf(TreeNode root) {
+    public int sumRootToLeaf(BinaryTreeNode root) {
         dfs(root, 0);
         return sum;
     }
@@ -25,7 +25,7 @@ public class RootToLeafSum_1022 {
         Initial attempt was by using string builder but problem with that was
         with pass by reference all node values were passed.
      */
-    private void dfs(TreeNode node, int currNumber) {
+    private void dfs(BinaryTreeNode node, int currNumber) {
         if (node != null) {
             currNumber = currNumber << 1 | node.val;
             if (node.left == null && node.right == null) {

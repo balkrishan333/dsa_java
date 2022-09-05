@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -10,25 +10,25 @@ public class SerializeBinaryTree {
     private static final Integer[] input = {1,2,3,null,null,4,5};
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode().createTree(input);
+        BinaryTreeNode root = new BinaryTreeNode().createTree(input);
         String data = serialize(root);
-        TreeNode tree = deserialize(data);
+        BinaryTreeNode tree = deserialize(data);
         System.out.println("tree = " + tree);
     }
 
     // Encodes a tree to a single string.
-    public static String serialize(TreeNode root) {
+    public static String serialize(BinaryTreeNode root) {
 
         if (root == null) {
             return null;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
         queue.offer(root);
         StringBuilder builder = new StringBuilder();
 
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+            BinaryTreeNode node = queue.poll();
             if (node != null) {
                 builder.append(node.val);
                 builder.append("::");
@@ -44,7 +44,7 @@ public class SerializeBinaryTree {
     }
 
     // Decodes your encoded data to tree.
-    public static TreeNode deserialize(String data)  {
+    public static BinaryTreeNode deserialize(String data)  {
 
         if (data == null) {
             return null;
@@ -52,26 +52,26 @@ public class SerializeBinaryTree {
 
         String[] arr = data.split("::");
 
-        TreeNode root = null;
-        Queue<TreeNode> nodes = new LinkedList<>();
+        BinaryTreeNode root = null;
+        Queue<BinaryTreeNode> nodes = new LinkedList<>();
 
         //add first element to queue. This is root.
         if (arr.length > 0) {
-            root = new TreeNode(Integer.parseInt(arr[0]));
+            root = new BinaryTreeNode(Integer.parseInt(arr[0]));
             nodes.offer(root);
         }
         for (int i = 1; i < arr.length; i++) {
-            TreeNode parent = nodes.poll();
+            BinaryTreeNode parent = nodes.poll();
 
             if (parent != null) {
                 if (!arr[i].equals("-")) {
-                    TreeNode node = new TreeNode(Integer.parseInt(arr[i]));
+                    BinaryTreeNode node = new BinaryTreeNode(Integer.parseInt(arr[i]));
                     parent.left = node;
                     nodes.offer(node);
                 }
 
                 if (!arr[++i].equals("-")) {
-                    TreeNode node = new TreeNode(Integer.parseInt(arr[i]));
+                    BinaryTreeNode node = new BinaryTreeNode(Integer.parseInt(arr[i]));
                     parent.right = node;
                     nodes.offer(node);
                 }
