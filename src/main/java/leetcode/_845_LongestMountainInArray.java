@@ -29,30 +29,30 @@ public class _845_LongestMountainInArray {
 
         int maxLength = 0;
         for (Integer peak : peaks) {
-            int i = peak-1, j = peak+1;
+            int start = peak-1, end = peak+1;
 
             boolean up = true, down =true;
             while (up || down) {
-                if (up && arr[i] < arr[i+1]) {
-                    i--;
-                    up = i >=0;
+                if (up && arr[start] < arr[start+1]) {
+                    start--;
+                    up = start >=0;
                 } else {
                     up = false;
                 }
 
-                if (down && arr[j] < arr[j-1]) {
-                    j++;
-                    down = j < arr.length;
+                if (down && arr[end] < arr[end-1]) {
+                    end++;
+                    down = end < arr.length;
                 } else {
                     down = false;
                 }
             }
 
             //we have moved 1 place past the start and end of curve. Track back 1 place.
-            i++;
-            j--;
+            start++;
+            end--;
 
-            maxLength = Math.max(maxLength, j-i+1);
+            maxLength = Math.max(maxLength, end-start+1);
         }
         return maxLength;
     }
