@@ -1,6 +1,6 @@
 package leetcode;
 
-import leetcode.common.TreeNode;
+import leetcode.common.BinaryTreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -11,19 +11,19 @@ public class _637_AverageOfLevelsInBinaryTree {
 
     public static void main(String[] args) {
         _637_AverageOfLevelsInBinaryTree obj = new _637_AverageOfLevelsInBinaryTree();
-        TreeNode root = new TreeNode().createTree(new Integer[]{3,9,20,null,null,15,7});
+        BinaryTreeNode root = new BinaryTreeNode().createTree(new Integer[]{3,9,20,null,null,15,7});
 
         System.out.println(obj.averageOfLevels(root));
     }
 
-    public List<Double> averageOfLevels(TreeNode root) {
+    public List<Double> averageOfLevels(BinaryTreeNode root) {
 
         if (root == null) {
             return null;
         }
 
         List<Double> result = new ArrayList<>();
-        Deque<TreeNode> que = new ArrayDeque<>();
+        Deque<BinaryTreeNode> que = new ArrayDeque<>();
         que.add(root);
 
         while (!que.isEmpty()) {
@@ -32,7 +32,7 @@ public class _637_AverageOfLevelsInBinaryTree {
             double sum=0;
 
             while (x < size) {
-                TreeNode node = que.poll();
+                BinaryTreeNode node = que.poll();
                 sum += node.val;
                 if (node.left != null) {
                     que.add(node.left);
