@@ -10,8 +10,8 @@ public class _18_4Sum {
     public static void main(String[] args) {
         _18_4Sum obj = new _18_4Sum();
 
-        int[] nums = new int[]{1,0,-1,0,-2,2};
-        int target = 0;
+        int[] nums = new int[]{2,2,2,2,2};
+        int target = 8;
         System.out.println(obj.fourSum(nums, target));
     }
 
@@ -20,7 +20,7 @@ public class _18_4Sum {
         Map<Integer, List<List<Integer>>> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
+            for (int j = i+1; j < nums.length; j++) {
                 int sum = nums[i] + nums[j];
 
                 if (map.containsKey(target - sum)) {
