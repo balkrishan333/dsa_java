@@ -21,6 +21,7 @@ public class _1544_MakeTheStringGreat {
                 stack.push(chars[i]);
             } else {
                 char top = stack.peek();
+                //for any letter, difference between upper case and lower case is 32. Eg: for a, a==97, A==65
                 if (Math.abs(top - chars[i]) == 32) {
                     stack.pop();
                 } else {
@@ -39,7 +40,7 @@ public class _1544_MakeTheStringGreat {
 
     /*  When two characters match the criteria, increase the chopIndex to move beyond these characters
         and in process move last character to front in case the last character matches the next incoming character
-        
+
         Does not work
      */
     public String makeGood_v1(String s) {
