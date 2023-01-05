@@ -6,7 +6,8 @@ public class _452_MinimumNumberOfArrowsToBurstBalloons {
 
     public static void main(String[] args) {
         _452_MinimumNumberOfArrowsToBurstBalloons obj = new _452_MinimumNumberOfArrowsToBurstBalloons();
-        int[][] points = {{10,16}, {2,8}, {1,6}, {7,12}};
+//        int[][] points = {{10,16}, {2,8}, {1,6}, {7,12}};
+        int[][] points = {{9,12},{1,10},{4,11},{8,12},{3,9},{6,9},{6,7}};
 
         System.out.println(obj.findMinArrowShots(points));
     }
@@ -14,23 +15,20 @@ public class _452_MinimumNumberOfArrowsToBurstBalloons {
     public int findMinArrowShots(int[][] points) {
 
         Arrays.sort(points, (a,b)-> {
-            if(a[0] == b[0]){
-                return a[1] - b[1];
-            }
-            return a[0] - b[0];
+            return Integer.compare(a[1], b[1]);
         });
 
-        //use sliding window to find overlapping items
-        for (int i = 0, j=i+1; i < points.length && j < points.length; i++) {
+        int arrows = 1;
+        int end = points[0][1];
+
+        for (int i = 1; i < points.length; i++) {
             int[] point = points[i];
-            int[] nextPoint = points[j];
 
-            if ((point[0] >= nextPoint[0] && point[0] <= nextPoint[1]) ||
-                    (point[1] <= nextPoint[1] && point[1] >= nextPoint[0])) {
-
-                System.out.println(Arrays.toString(point) + " and " + Arrays.toString(nextPoint) + " overlap.");
+            if(point[0] > end) {
+                arrows++;
+                end = point[1];
             }
         }
-        return 0;
+        return arrows;
     }
 }
