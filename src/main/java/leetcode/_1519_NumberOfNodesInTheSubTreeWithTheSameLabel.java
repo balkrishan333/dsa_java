@@ -17,16 +17,7 @@ public class _1519_NumberOfNodesInTheSubTreeWithTheSameLabel {
     }
 
     public int[] countSubTrees(int n, int[][] edges, String labels) {
-        /*List<Integer>[] graph = new ArrayList[n];
 
-        for (int i = 0; i < n; i++) {
-            graph[i] = new ArrayList<>();
-        }
-
-        for (int[] edge : edges) {
-            graph[edge[0]].add(edge[1]);
-            graph[edge[1]].add(edge[0]);
-        }*/
         List<Integer>[] graph = new ArrayList[n];
 
         for (int i = 0; i < n; i++) {
@@ -43,37 +34,31 @@ public class _1519_NumberOfNodesInTheSubTreeWithTheSameLabel {
 
         boolean[] visitedNodes = new boolean[n];
 
-        int[] count = new int[26];
-
         char[] chars = labels.toCharArray();
-        count[chars[0]-97] = 1;
 
-        postOrderTraversal(graph, count, chars, visitedNodes, 0, result);
+        postOrderTraversal(graph, chars, visitedNodes, 0, result);
         return result;
     }
 
-    private void postOrderTraversal(List<Integer>[] graph, int[] count, char[] chars, boolean[] visitedNodes, int node, int[] result) {
+    private int[] postOrderTraversal(List<Integer>[] graph, char[] chars, boolean[] visitedNodes, int node, int[] result) {
 
+        int[] count = new int[26];
         if (!visitedNodes[node]) {
 
             visitedNodes[node] = true;
+            count[chars[node] - 'a'] = 1;
 
             List<Integer> nodes = graph[node];
-            if (nodes.size() == 0) {
-                result[node] = 1;
-            }
 
-            for (int a : nodes) {
-                int[] count2 = new int[26];
-                count2[chars[a] - 97] = 1;
-                postOrderTraversal(graph, count2, chars, visitedNodes, a, result);
+            for (int child : nodes) {
+                int[] childNodes = postOrderTraversal(graph, chars, visitedNodes, child, result);
 
                 for (int i = 0; i < 26; i++) {
-                    count[i] = count[i] + count2[i];
+                    count[i] = count[i] + childNodes[i];
                 }
             }
-
-            result[node] = count[chars[node]-97];
+            result[node] = count[chars[node]-'a'];
         }
+        return count;
     }
 }
