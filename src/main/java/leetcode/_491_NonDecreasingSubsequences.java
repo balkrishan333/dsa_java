@@ -24,20 +24,27 @@ public class _491_NonDecreasingSubsequences {
     }
 
     private void backTrack(int index, List<Integer> sequence, Set<List<Integer>> answer, int[] nums) {
+        //base condition for recursion. No room to move ahead from last index
         if (index == nums.length) {
-            if (sequence.size() > 1) {
+            //add to answer iff size of sequence is at least 2
+            if (sequence.size() >= 2) {
                 answer.add(new ArrayList<>(sequence));
             }
-
             return;
         }
 
+        /*
+            if current element is greater than last element in sequence, sequence is incrementing,
+            so add the element to sequence and move to next index
+         */
         if (sequence.isEmpty() || sequence.get(sequence.size()-1) <= nums[index]) {
             sequence.add(nums[index]);
             backTrack(index+1, sequence, answer, nums);
 
+            //remove from sequence for next index
             sequence.remove(sequence.size()-1);
         }
+
         backTrack(index+1, sequence, answer, nums);
 
     }
