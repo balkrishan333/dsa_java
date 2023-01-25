@@ -1,17 +1,16 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class AllPathsFromSourceToTarget_797 {
+public class _797_AllPathsFromSourceToTarget {
 
     public static void main(String[] args) {
 
         int[][] graph = {{1,2}, {3},{3},{}};
 
-        AllPathsFromSourceToTarget_797 obj = new AllPathsFromSourceToTarget_797();
+        _797_AllPathsFromSourceToTarget obj = new _797_AllPathsFromSourceToTarget();
 //        List<List<Integer>> result = obj.allPathsSourceTarget(graph);
         List<List<Integer>> result = obj.allPathsSourceTarget_v2(graph);
         System.out.println(result);
