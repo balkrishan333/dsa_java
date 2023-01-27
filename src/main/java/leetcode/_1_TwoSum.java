@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum_1 {
+public class _1_TwoSum {
 
     public static void main(String[] args) {
-        TwoSum_1 obj = new TwoSum_1();
+        _1_TwoSum obj = new _1_TwoSum();
         int[] nums = {2,7,11,15};
         int target = 9;
         System.out.println(Arrays.toString(obj.twoSum(nums, target)));
