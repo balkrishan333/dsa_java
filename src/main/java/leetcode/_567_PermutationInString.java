@@ -1,17 +1,17 @@
 package leetcode;
 
-public class PermutationInString_567 {
+public class _567_PermutationInString {
 
     public static void main(String[] args) {
-        PermutationInString_567 obj = new PermutationInString_567();
+        _567_PermutationInString obj = new _567_PermutationInString();
         String s1 = "adc";
         String s2 = "dcda";
 
-        boolean inclusion = obj.checkInclusion_v2(s1, s2);
+        boolean inclusion = obj.checkInclusion(s1, s2);
         System.out.println(inclusion);
     }
 
-    public boolean checkInclusion_v2(String s1, String s2) {
+    public boolean checkInclusion(String s1, String s2) {
 
         int lenS1 = s1.length();
         int lenS2 = s2.length();
@@ -24,6 +24,7 @@ public class PermutationInString_567 {
         char[] s2Arr = s2.toCharArray();
         int[] charCount = new int[26];
 
+        //lenS1 is smaller than or equal to lenS2
         for (int i = 0; i < lenS1; i++) {
             charCount[s1Arr[i]-'a']--;
             charCount[s2Arr[i]-'a']++;
@@ -33,9 +34,11 @@ public class PermutationInString_567 {
             return true;
         }
 
+        //sliding window, we already traverse s2 partially (of size s1)
+        //now use sliding window, keep size of window equal to length of s1
         for (int i = lenS1; i < lenS2; i++) {
-            charCount[s2Arr[i]-'a']++;
-            charCount[s2Arr[i-lenS1]-'a']--;
+            charCount[s2Arr[i]-'a']++; //increase count of incoming character in window
+            charCount[s2Arr[i-lenS1]-'a']--; // decrease count of outgoing character from window
 
             if (allZero(charCount)) {
                 return true;
@@ -45,21 +48,22 @@ public class PermutationInString_567 {
     }
 
     private boolean allZero(int[] charCount) {
-        for (int i = 0; i < charCount.length; i++) {
-            if (charCount[i] != 0) {
+        for (int j : charCount) {
+            if (j != 0) {
                 return false;
             }
         }
         return true;
     }
-    public boolean checkInclusion(String s1, String s2) {
+    @SuppressWarnings("unused")
+    public boolean checkInclusion_v1(String s1, String s2) {
         int lenS1 = s1.length();
 
         char[] chars = s1.toCharArray();
         int[] charCount = new int[26];
 
-        for (int i = 0; i < chars.length; i++) {
-            charCount[chars[i]-97]++;
+        for (char aChar : chars) {
+            charCount[aChar - 97]++;
         }
 
         int[] charCountCopy = charCount.clone();
