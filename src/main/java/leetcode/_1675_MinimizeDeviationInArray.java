@@ -3,6 +3,7 @@ package leetcode;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+@SuppressWarnings("ConstantConditions")
 public class _1675_MinimizeDeviationInArray {
 
     public static void main(String[] args) {
@@ -51,6 +52,19 @@ public class _1675_MinimizeDeviationInArray {
         int deviation = pq.peek() - min;
 
         //stop when we see odd at top of queue
+        /*
+            Why this works.  Eg: [7,8,10,12,15]
+
+            Why eliminating odd elements works. isn't multiplying odd element by 2 can change the min of array as in
+            ex: above. Ans: yest min changes, but then we are dividing the elements by 2 while iterating over them
+            and if this element is to be the lowest it will come back again when we devide it by 2
+
+            but we only divide max elements by 2 not all elements then how does this element come into picture.
+
+            if the odd element is original array does not come out to be max elements after multiplying by 2
+            then it won't be considered as we need to check difference between min and max.
+
+         */
         while (pq.peek() % 2 == 0) {
             int max = pq.poll();
             deviation = Math.min(deviation, max - min);
@@ -59,6 +73,8 @@ public class _1675_MinimizeDeviationInArray {
             pq.add(max);
         }
 
+        // corner case, we exited from loop because we found the largest element was odd, and we can't divide odd
+        //element but this element is still the largest element in array, so we need to consider it.
         return Math.min(deviation, pq.peek()-min);
     }
 }
