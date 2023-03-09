@@ -14,6 +14,12 @@ public class _142_LinkedListCycleII {
     /*
         Approach:
 
+        use Floyd's cycle detection algorithm. It states use slow and fast pointer. slow pointer moves one step at a time
+        and fast moves 2 steps at a time. If they meet cycle exists.
+
+        To find start of cycle: reset one to start of list and move both 1 step. Place where they meet is start of
+        cycle. It works because when 2 pointers meet first time (cycle detection phase), no of elements left to complete
+         the cycle are equal no of elements outside cycle. So both will meet at start of cycle.
 
      */
     public ListNode detectCycle(ListNode head) {
