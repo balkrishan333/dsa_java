@@ -2,10 +2,10 @@ package leetcode;
 
 import leetcode.common.BinaryTreeNode;
 
-public class LowestCommonAncestor_236 {
+public class _236_LowestCommonAncestor {
 
     public static void main(String[] args) {
-        LowestCommonAncestor_236 obj = new LowestCommonAncestor_236();
+        _236_LowestCommonAncestor obj = new _236_LowestCommonAncestor();
         Integer[] input = {3,5,1,6,2,0,8,null,null,7,4};
         BinaryTreeNode root = new BinaryTreeNode().createTree(input);
 

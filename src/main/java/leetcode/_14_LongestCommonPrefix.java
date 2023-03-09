@@ -1,9 +1,9 @@
 package leetcode;
 
-public class LongestCommonPrefix_14 {
+public class _14_LongestCommonPrefix {
 
     public static void main(String[] args) {
-        LongestCommonPrefix_14 obj = new LongestCommonPrefix_14();
+        _14_LongestCommonPrefix obj = new _14_LongestCommonPrefix();
 
 //        String[] strs = {"flower","flow","flight"};
         String[] strs = {"cir","car"};

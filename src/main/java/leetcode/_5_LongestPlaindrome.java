@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LongestPlaindrome_5 {
+public class _5_LongestPlaindrome {
 
     public static void main(String[] args) {
 //        String s = "daba";

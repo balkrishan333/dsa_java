@@ -1,11 +1,9 @@
 package leetcode;
 
-import java.util.Arrays;
-
-public class LongestCommonSubsequence_1143 {
+public class _1143_LongestCommonSubsequence {
 
     public static void main(String[] args) {
-        LongestCommonSubsequence_1143 obj = new LongestCommonSubsequence_1143();
+        _1143_LongestCommonSubsequence obj = new _1143_LongestCommonSubsequence();
 
         String text1 = "abcde", text2 = "ace";
         System.out.println(obj.longestCommonSubsequence(text1, text2));

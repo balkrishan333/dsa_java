@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.*;
 
-public class LetterCombinationsOfAPhoneNumber_17 {
+public class _17_LetterCombinationsOfAPhoneNumber {
 
     private static final Map<Character, List<String>> MAPPING;
 
@@ -19,7 +19,7 @@ public class LetterCombinationsOfAPhoneNumber_17 {
     }
 
     public static void main(String[] args) {
-        LetterCombinationsOfAPhoneNumber_17 obj = new LetterCombinationsOfAPhoneNumber_17();
+        _17_LetterCombinationsOfAPhoneNumber obj = new _17_LetterCombinationsOfAPhoneNumber();
 
         String digits = "234";
         System.out.println(obj.letterCombinations(digits));

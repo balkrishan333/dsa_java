@@ -1,9 +1,9 @@
 package leetcode;
 
-public class LongestPalindromicSubstring_5 {
+public class _5_LongestPalindromicSubstring {
 
     public static void main(String[] args) {
-        LongestPalindromicSubstring_5 obj = new LongestPalindromicSubstring_5();
+        _5_LongestPalindromicSubstring obj = new _5_LongestPalindromicSubstring();
 
         String s = "aacabdkacaa";
         System.out.println(obj.longestPalindrome_v3(s));

@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class LongestSubstringWithoutRepeatingCharacters_3 {
+public class _3_LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
-        LongestSubstringWithoutRepeatingCharacters_3 obj = new LongestSubstringWithoutRepeatingCharacters_3();
+        _3_LongestSubstringWithoutRepeatingCharacters obj = new _3_LongestSubstringWithoutRepeatingCharacters();
 
         String s = "abcabcbb";
         System.out.println(obj.lengthOfLongestSubstring(s));

@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestStringChain_1048 {
+public class _1048_LongestStringChain {
 
     public static void main(String[] args) {
-        LongestStringChain_1048 obj = new LongestStringChain_1048();
+        _1048_LongestStringChain obj = new _1048_LongestStringChain();
 
         String[] words = {"xbc","pcxbcf","xb","cxbc","pcxbc"};
         System.out.println(obj.longestStrChain(words));
