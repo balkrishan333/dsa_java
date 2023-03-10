@@ -13,7 +13,7 @@ public class DeleteOperationForTwoStrings_583 {
     }
 
     public int minDistance(String word1, String word2) {
-        LongestCommonSubsequence_1143 obj = new LongestCommonSubsequence_1143();
+        _1143_LongestCommonSubsequence obj = new _1143_LongestCommonSubsequence();
         int length = obj.longestCommonSubsequence(word1, word2);
 
         return word1.length() + word2.length() - 2* length;
