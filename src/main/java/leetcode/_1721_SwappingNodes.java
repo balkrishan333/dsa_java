@@ -2,10 +2,10 @@ package leetcode;
 
 import leetcode.common.ListNode;
 
-public class SwappingNodes_1721 {
+public class _1721_SwappingNodes {
 
     public static void main(String[] args) {
-        SwappingNodes_1721 obj = new SwappingNodes_1721();
+        _1721_SwappingNodes obj = new _1721_SwappingNodes();
         ListNode head = constructList();
         obj.swapNodes(head,2);
     }

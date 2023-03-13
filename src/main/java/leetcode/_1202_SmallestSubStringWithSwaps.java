@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SmallestSubStringWithSwaps_1202 {
+public class _1202_SmallestSubStringWithSwaps {
 
     private static final int MAX_LENGTH = 100000;
     private List<Integer>[] adjacencyList = new ArrayList[MAX_LENGTH];
     private boolean[] visited = new boolean[MAX_LENGTH];
 
     public static void main(String[] args) {
-        SmallestSubStringWithSwaps_1202 obj = new SmallestSubStringWithSwaps_1202();
+        _1202_SmallestSubStringWithSwaps obj = new _1202_SmallestSubStringWithSwaps();
         String s = "dcab";
         List<List<Integer>> pairs = new ArrayList<>();
 

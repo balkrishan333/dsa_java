@@ -1,9 +1,9 @@
 package leetcode;
 
-public class SqrtX_69 {
+public class _69_SqrtX {
 
     public static void main(String[] args) {
-        SqrtX_69 obj = new SqrtX_69();
+        _69_SqrtX obj = new _69_SqrtX();
 
         int x = 2147483647;
         System.out.println(obj.calcSqrt(x, 0, x));

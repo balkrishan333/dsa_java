@@ -1,9 +1,9 @@
 package leetcode;
 
-public class ShortestUnsortedContinuousSubarray_581 {
+public class _581_ShortestUnsortedContinuousSubarray {
 
     public static void main(String[] args) {
-        ShortestUnsortedContinuousSubarray_581 obj = new ShortestUnsortedContinuousSubarray_581();
+        _581_ShortestUnsortedContinuousSubarray obj = new _581_ShortestUnsortedContinuousSubarray();
 
 //        int[] nums = {2,6,4,8,10,9,15};
 //        int[] nums = {1,2,3,4};

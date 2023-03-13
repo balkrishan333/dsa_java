@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class SortArrayByParity_905 {
+public class _905_SortArrayByParity {
 
     public static void main(String[] args) {
-        SortArrayByParity_905 obj = new SortArrayByParity_905();
+        _905_SortArrayByParity obj = new _905_SortArrayByParity();
         int[] nums = {0};
 
         System.out.println(Arrays.toString(obj.sortArrayByParity(nums)));
