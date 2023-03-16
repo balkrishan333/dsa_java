@@ -1,28 +1,25 @@
 package leetcode;
 
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CourseSchedule_II_210 {
+public class _207_CourseSchedule {
 
     private Node[] nodes;
-    private Set<Integer> order = new LinkedHashSet<>();
 
     public static void main(String[] args) {
-        CourseSchedule_II_210 obj = new CourseSchedule_II_210();
+        _207_CourseSchedule obj = new _207_CourseSchedule();
 
-//        int numCourses = 5;
-//        int[][]prerequisites = {{1,4},{2,4},{3,1},{3,2}};
-        int numCourses = 2;
-        int[][]prerequisites = {{1,0}};
+        int numCourses = 5;
+        int[][]prerequisites = {{1,4},{2,4},{3,1},{3,2}};
 
-        System.out.println(Arrays.toString(obj.findOrder(numCourses, prerequisites)));
+        System.out.println(obj.canFinish(numCourses, prerequisites));
     }
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
 
         if(prerequisites.length == 0) {
-            return IntStream.range(0, numCourses).toArray();
+            return true;
         }
 
         nodes = new Node[numCourses]; // create a node for each course
@@ -49,22 +46,13 @@ public class CourseSchedule_II_210 {
         for (Node node : nodes) {
             if (node.state == State.NOT_STARTED) {
                 if (node.adj.size() == 0) { // if node has no adj, mark it visited as nothing for dfs visit
-                    order.add(node.val);
                     node.state = State.COMPLETED;
                     continue;
                 }
                 result = result & dfs(node);
             }
         }
-        if (!result) {
-            return new int[0];
-        }
-        int[] res = new int[order.size()];
-        Iterator<Integer> iterator = order.iterator();
-        for (int i = order.size()-1; i >=0; i--) {
-            res[i] = iterator.next();
-        }
-        return res;
+        return result;
     }
 
     private boolean dfs(Node node) {
@@ -82,10 +70,8 @@ public class CourseSchedule_II_210 {
                 } else if (node1.state == State.IN_PROGRESS){
                     return false;
                 }
-                order.add(node1.val);
                 node1.state = State.COMPLETED;
             }
-            order.add(node.val);
             node.state = State.COMPLETED;
         }
         return node.state == State.COMPLETED;

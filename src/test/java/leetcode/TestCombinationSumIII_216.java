@@ -10,7 +10,7 @@ public class TestCombinationSumIII_216 {
 
     @Test
     public void test_1() {
-        CombinationSumIII_216 obj = new CombinationSumIII_216();
+        _216_CombinationSumIII obj = new _216_CombinationSumIII();
         List<List<Integer>> result = obj.combinationSum3(9, 45);
 
         List<List<Integer>> expected = new ArrayList<>();
@@ -32,7 +32,7 @@ public class TestCombinationSumIII_216 {
 
     @Test
     public void test_2() {
-        CombinationSumIII_216 obj = new CombinationSumIII_216();
+        _216_CombinationSumIII obj = new _216_CombinationSumIII();
         List<List<Integer>> result = obj.combinationSum3(3, 7);
 
         List<List<Integer>> expected = new ArrayList<>();

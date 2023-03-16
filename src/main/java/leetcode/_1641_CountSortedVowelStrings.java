@@ -4,12 +4,12 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
 
-public class CountSortedVowelStrings_1641 {
+public class _1641_CountSortedVowelStrings {
 
     private static final List<String> VOWELS = List.of("a", "e", "i", "o", "u");
 
     public static void main(String[] args) {
-        CountSortedVowelStrings_1641 obj = new CountSortedVowelStrings_1641();
+        _1641_CountSortedVowelStrings obj = new _1641_CountSortedVowelStrings();
 
         int n = 2;
         System.out.println(obj.countVowelStrings_v2(n));

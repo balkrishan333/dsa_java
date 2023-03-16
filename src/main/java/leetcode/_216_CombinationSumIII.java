@@ -3,12 +3,12 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CombinationSumIII_216 {
+public class _216_CombinationSumIII {
 
     private List<List<Integer>> ans = new ArrayList<>();
 
     public static void main(String[] args) {
-        CombinationSumIII_216 obj = new CombinationSumIII_216();
+        _216_CombinationSumIII obj = new _216_CombinationSumIII();
 
         int k = 3, n = 7;
         System.out.println(obj.combinationSum3(k, n));

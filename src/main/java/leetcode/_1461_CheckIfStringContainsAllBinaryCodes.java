@@ -1,11 +1,9 @@
 package leetcode;
 
-import java.util.stream.Stream;
-
-public class CheckIfStringContainsAllBinaryCodes_1461 {
+public class _1461_CheckIfStringContainsAllBinaryCodes {
 
     public static void main(String[] args) {
-        CheckIfStringContainsAllBinaryCodes_1461 obj = new CheckIfStringContainsAllBinaryCodes_1461();
+        _1461_CheckIfStringContainsAllBinaryCodes obj = new _1461_CheckIfStringContainsAllBinaryCodes();
 
         String s = "00110";
         int k =2;

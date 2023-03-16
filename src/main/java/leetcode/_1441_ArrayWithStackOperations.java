@@ -3,7 +3,7 @@ package leetcode;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayWithStackOperations_1441 {
+public class _1441_ArrayWithStackOperations {
 
     public static void main(String[] args) {
         int[] target = {1,3};
