@@ -16,6 +16,10 @@ public class _958_CheckCompletenessOfABinaryTree {
         System.out.println(obj.isCompleteTree(root));
     }
 
+    /*
+        Approach: When doing BFS, in a complete binary tree all nulls should always be at end
+        If there is a null value sandwiched between non-null values, tree is not complete binary tree
+     */
     public boolean isCompleteTree(BinaryTreeNode root) {
         if (root == null) {
             return true;
