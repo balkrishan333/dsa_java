@@ -1,77 +1,82 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class _2492_MinimumScoreOfAPathBetweenTwoCities {
 
     public static void main(String[] args) {
         _2492_MinimumScoreOfAPathBetweenTwoCities obj = new _2492_MinimumScoreOfAPathBetweenTwoCities();
 
-        int n = 4;
-        int[][] roads = {{1,2,9},{2,3,6},{2,4,5},{1,4,7}};
+//        int n = 4;
+//        int[][] roads = {{1,2,9},{2,3,6},{2,4,5},{1,4,7}};
+//        int n = 6;
+//        int[][] roads = {{4,5,7468},{6,2,7173},{6,3,8365},{2,3,7674},{5,6,7852},{1,2,8547},{2,4,1885},{2,5,5192},{1,3,4065},{1,4,7357}};
+        int n = 20;
+        int[][] roads = {{18,20,9207},{14,12,1024},{11,9,3056},{8,19,416},{3,18,5898},{17,3,6779},{13,15,3539},{15,11,
+                1451},{19,2,3805},{9,8,2238},{1,16,618},{16,14,55},{17,7,6903},{12,13,1559},{2,17,3693}};
+//        int n = 13;
+//        int[][] roads = {{2,12,1891},{10,9,4138},{11,3,2007},{1,10,9390},{12,8,1915},{6,2,1098},{5,4,2795},{3,13,
+//                4562},{9,7,9202},{4,6,6752},{8,11,1480},{7,5,9827}};
         System.out.println(obj.minScore(n, roads));
     }
 
+    /*
+        Approach:
+
+        Use union find algo to create subsets of nodes which are connected. Find the parent for node 1 (because we
+        need to find distance between 1st and nth node). Traverse through all roads and if any node in the road is in
+         the same subset as of node 1, consider its distance. We need not check for both nodes in a road because we
+         know they both will be in same subset.
+     */
+
     public int minScore(int n, int[][] roads) {
-        List<Integer>[] graph = new List[n+1];
-        for (int i = 0; i < graph.length; i++) {
-            graph[i] = new ArrayList<>();
-        }
 
         int[] parent = new int[n+1];
-        parent[1] = 1;
-
-        int[] minDistance = new int[n+1];
-        Arrays.fill(minDistance, Integer.MAX_VALUE);
+        int[] rank = new int[n+1];
+        for (int i = 0; i < parent.length; i++) {
+            parent[i] = i;
+        }
 
         for (int[] road : roads) {
-            //Build graph
-            graph[road[0]].add(road[1]);
-            graph[road[1]].add(road[0]);
-
-            //initialize union find the nodes
-            if (parent[road[0]] == 0) {
-                parent[road[0]] = road[1];
-            } else if (parent[road[1]] == 0) {
-                parent[road[1]] = road[0];
-            }
-
-            minDistance[road[0]] = Math.min(minDistance[road[0]], road[2]);
-            minDistance[road[1]] = Math.min(minDistance[road[1]], road[2]);
+            union(road[0], road[1], parent, rank);
         }
 
-//        System.out.println(Arrays.toString(graph));
-//        System.out.println(Arrays.toString(parent));
-//        System.out.println(Arrays.toString(minDistance));
-
-        //union find the nodes
-        for (int i = 1; i <= n; i++) {
-            int childOf = find(i, parent);
-            parent[i] = childOf;
-        }
-
-//        System.out.println(Arrays.toString(parent));
         //identify the graph which has both first and last node
-        int root = parent[1];
+        int root = find(1, parent);
 
         //find minimum distance in the graph
-        boolean[] visited = new boolean[n+1];
-        int min = Integer.MAX_VALUE;
+        int answer = Integer.MAX_VALUE;
         for (int[] road : roads) {
-            if (road[0] == root || road[1] == root) {
-                min = Math.min(min, road[2]);
+            if (find(road[0], parent) == root) {
+                answer = Math.min(answer, road[2]);
             }
         }
-        return minDistance[root];
+        return answer;
     }
 
     private int find(int node, int[] parent) {
         if (parent[node] == node) {
-            return node;
+            return parent[node];
+        }
+        return find(parent[node], parent);
+    }
+
+    /*
+        Using union by rank algo for creating subsets
+     */
+    private void union(int node1, int node2, int[] parent, int[] rank) {
+        int node1Parent = find(node1, parent);
+        int node2Parent = find(node2, parent);
+
+        if (node1Parent == node2Parent) {
+            return;
         }
 
-        return find(parent[node], parent);
+        if (rank[node1Parent] < rank[node2Parent]) {
+            parent[node1Parent] = node2Parent;
+        }else if (rank[node1Parent] > rank[node2Parent]) {
+            parent[node2Parent] = node1Parent;
+        } else {
+            parent[node1Parent] = node2Parent;
+            rank[node2Parent]++;
+        }
     }
 }
