@@ -1,7 +1,9 @@
 package leetcode;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 public class _2360_LongestCycleInAGraph {
 
@@ -15,7 +17,56 @@ public class _2360_LongestCycleInAGraph {
     }
 
     /*
-        Approach:
+        Approach: Kahn's algorithm
+     */
+    public int longestCycle(int[] edges) {
+        int[] inDegree = new int[edges.length];
+        for(int edge : edges) {
+            if(edge != -1) {
+                inDegree[edge]++;
+            }
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
+                queue.add(i);
+            }
+        }
+
+        boolean[] visited = new boolean[edges.length];
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            if (!visited[node]) {
+                visited[node] = true;
+                int neighbor = edges[node];
+                if(neighbor != -1) {
+                    inDegree[neighbor]--;
+                    if (inDegree[neighbor] == 0) {
+                        queue.add(neighbor);
+                    }
+                }
+            }
+        }
+        int answer = -1;
+        for (int i = 0; i < visited.length; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                int count = 1;
+                int neighbor = edges[i];
+                while (neighbor != i) {
+                    count++;
+                    neighbor = edges[neighbor];
+                    visited[neighbor] = true;
+                }
+                answer = Math.max(answer, count);
+            }
+        }
+        return answer;
+    }
+
+    /*
+        Approach: DFS
         DFS for each node and keep track of distance of each node as we traverse deep. Distance is no. of nodes visited.
 
         if no edge exists, i.e. we can't move further, return
@@ -26,7 +77,7 @@ public class _2360_LongestCycleInAGraph {
          cycle), find the length of cycle and save max.
 
      */
-    public int longestCycle(int[] edges) {
+    public int longestCycle_v1(int[] edges) {
         boolean[] visited = new boolean[edges.length];
 
         int nodes = edges.length;
