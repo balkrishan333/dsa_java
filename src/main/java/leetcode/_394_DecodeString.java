@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class DecodeString_394 {
+public class _394_DecodeString {
 
     public static void main(String[] args) {
         String s = "3[a]2[bc]";

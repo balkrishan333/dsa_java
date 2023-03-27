@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class DesignHashSet_705 {
+public class _705_DesignHashSet {
 
     //ideally would want to start with 16 but some issue with resize leading to test case failure. So switching to higher value
     private static final int INITIAL_CAPACITY = 100000;
@@ -12,7 +12,7 @@ public class DesignHashSet_705 {
     private int capacity = INITIAL_CAPACITY;
     private int size;
 
-    public DesignHashSet_705() {
+    public _705_DesignHashSet() {
         set = (ArrayList<Integer>[])new ArrayList[INITIAL_CAPACITY];
     }
 
@@ -103,7 +103,7 @@ public class DesignHashSet_705 {
     }
 
     public static void main(String[] args) {
-        DesignHashSet_705 obj = new DesignHashSet_705();
+        _705_DesignHashSet obj = new _705_DesignHashSet();
         /*obj.contains(72);
         obj.remove(91);
         obj.add(48);

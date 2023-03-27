@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class DesignHashMap_706 {
+public class _706_DesignHashMap {
 
     private static final int INITIAL_CAPACITY = 1000000;
     private List<Node>[] map;
     private int capacity;
 
-    public DesignHashMap_706() {
+    public _706_DesignHashMap() {
         map = new ArrayList[INITIAL_CAPACITY];
         capacity = INITIAL_CAPACITY;
     }

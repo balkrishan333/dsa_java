@@ -1,9 +1,9 @@
 package leetcode;
 
-public class DivideTwoInteger_29 {
+public class _29_DivideTwoInteger {
 
     public static void main(String[] args) {
-        DivideTwoInteger_29 obj = new DivideTwoInteger_29();
+        _29_DivideTwoInteger obj = new _29_DivideTwoInteger();
         int dividend = 10, divisor = 3;
 
         System.out.println(obj.divide_v2(dividend, divisor));

@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.*;
 
-public class DinnerPlateStack_1172 {
+public class _1172_DinnerPlateStack {
 
     private final List<Stack> stacks = new ArrayList<>();
     private final int capacity;
@@ -11,14 +11,14 @@ public class DinnerPlateStack_1172 {
     //stack to pop from will be first element. Sorted in reverse order. Need to pop from right most stack
     private final SortedSet<Integer> popPriority = new TreeSet<>(Comparator.reverseOrder());
 
-    public DinnerPlateStack_1172(int capacity) {
+    public _1172_DinnerPlateStack(int capacity) {
         this.capacity = capacity;
         System.out.println("null");
     }
 
     public static void main(String[] args) {
         {
-            DinnerPlateStack_1172 obj = new DinnerPlateStack_1172(2);
+            _1172_DinnerPlateStack obj = new _1172_DinnerPlateStack(2);
             obj.push(1);
             obj.push(2);
             obj.push(3);

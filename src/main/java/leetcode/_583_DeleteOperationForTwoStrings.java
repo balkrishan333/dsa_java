@@ -1,9 +1,9 @@
 package leetcode;
 
-public class DeleteOperationForTwoStrings_583 {
+public class _583_DeleteOperationForTwoStrings {
 
     public static void main(String[] args) {
-        DeleteOperationForTwoStrings_583 obj = new DeleteOperationForTwoStrings_583();
+        _583_DeleteOperationForTwoStrings obj = new _583_DeleteOperationForTwoStrings();
 
 //        String word1 = "sea", word2 = "eat";
 //        String word1 = "leetcode", word2 = "etco";
