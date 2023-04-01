@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class MinimumOperations_To_Reduce_X_To_Zero_1658 {
+public class _1658_MinimumOperations_To_Reduce_X_To_Zero {
 
     public static void main(String[] args) {
-        MinimumOperations_To_Reduce_X_To_Zero_1658 obj = new MinimumOperations_To_Reduce_X_To_Zero_1658();
+        _1658_MinimumOperations_To_Reduce_X_To_Zero obj = new _1658_MinimumOperations_To_Reduce_X_To_Zero();
         int x = 134365;
         int[] nums = {8828,9581,49,9818,9974,9869,9991,10000,10000,10000,9999,9993,9904,8819,1231,6309};
 

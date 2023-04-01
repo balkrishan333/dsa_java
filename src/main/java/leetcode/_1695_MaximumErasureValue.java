@@ -1,13 +1,11 @@
 package leetcode;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class MaximumErasureValue_1695 {
+public class _1695_MaximumErasureValue {
 
     public static void main(String[] args) {
-        MaximumErasureValue_1695 obj = new MaximumErasureValue_1695();
+        _1695_MaximumErasureValue obj = new _1695_MaximumErasureValue();
 
 //        int[] nums = {5,2,1,2,5,2,1,2,5};
 //        int[] nums = {4,2,4,5,6};

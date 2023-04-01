@@ -3,10 +3,10 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MaxNumbersOfKSumPairs_1679 {
+public class _1679_MaxNumbersOfKSumPairs {
 
     public static void main(String[] args) {
-        MaxNumbersOfKSumPairs_1679 obj = new MaxNumbersOfKSumPairs_1679();
+        _1679_MaxNumbersOfKSumPairs obj = new _1679_MaxNumbersOfKSumPairs();
         int[] nums = {3,1,3,4,3};
         int k = 6;
 

@@ -3,12 +3,12 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinStack_155 {
+public class _155_MinStack {
 
     private List<StackNode> stack = new ArrayList<>();
 
     public static void main(String[] args) {
-        MinStack_155 obj = new MinStack_155();
+        _155_MinStack obj = new _155_MinStack();
         obj.push(-2);
         obj.push(0);
         obj.push(-1);
