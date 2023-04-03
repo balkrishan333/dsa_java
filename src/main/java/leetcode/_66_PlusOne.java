@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class PlusOne_66 {
+public class _66_PlusOne {
 
     public static void main(String[] args) {
-        PlusOne_66 obj = new PlusOne_66();
+        _66_PlusOne obj = new _66_PlusOne();
 
         int[] digits = {6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3};
         System.out.println(Arrays.toString(obj.plusOne(digits)));

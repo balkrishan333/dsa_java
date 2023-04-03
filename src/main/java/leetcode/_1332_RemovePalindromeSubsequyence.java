@@ -1,6 +1,6 @@
 package leetcode;
 
-public class RemovePalindromeSubsequyence_1332 {
+public class _1332_RemovePalindromeSubsequyence {
 
     public static void main(String[] args) {
         

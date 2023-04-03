@@ -3,10 +3,10 @@ package leetcode;
 import java.util.Arrays;
 import java.util.List;
 
-public class NQueens_51 {
+public class _51_NQueens {
 
     public static void main(String[] args) {
-        NQueens_51 obj = new NQueens_51();
+        _51_NQueens obj = new _51_NQueens();
 
         int n = 4;
         obj.solveNQueens(n);

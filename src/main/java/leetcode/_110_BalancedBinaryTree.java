@@ -2,10 +2,10 @@ package leetcode;
 
 import leetcode.common.BinaryTreeNode;
 
-public class BalancedBinaryTree_110 {
+public class _110_BalancedBinaryTree {
 
     public static void main(String[] args) {
-        BalancedBinaryTree_110 obj = new BalancedBinaryTree_110();
+        _110_BalancedBinaryTree obj = new _110_BalancedBinaryTree();
         Integer[] input = {1,2,3,4,5,6,null,8};
         BinaryTreeNode root = new BinaryTreeNode().createTree(input);
 

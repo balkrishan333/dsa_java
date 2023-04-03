@@ -2,7 +2,7 @@ package leetcode;
 
 import leetcode.common.ListNode;
 
-public final class RemoveDuplicateFromSortedList_82 {
+public final class _82_RemoveDuplicateFromSortedList {
 
     public static void main(String[] args) {
         ListNode listNode = constructList();

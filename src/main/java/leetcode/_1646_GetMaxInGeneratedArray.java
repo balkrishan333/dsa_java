@@ -1,9 +1,9 @@
 package leetcode;
 
-public class GetMaxInGeneratedArray_1646 {
+public class _1646_GetMaxInGeneratedArray {
 
     public static void main(String[] args) {
-        GetMaxInGeneratedArray_1646 obj = new GetMaxInGeneratedArray_1646();
+        _1646_GetMaxInGeneratedArray obj = new _1646_GetMaxInGeneratedArray();
 
         int n =5;
 

@@ -1,14 +1,12 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class ImplementstrStr_28 {
+public class _28_ImplementstrStr {
 
     public static void main(String[] args) {
-        ImplementstrStr_28 obj = new ImplementstrStr_28();
+        _28_ImplementstrStr obj = new _28_ImplementstrStr();
         String haystack = "hello", needle = "ll";
 
         System.out.println(obj.strStr(haystack, needle));

@@ -7,25 +7,25 @@ public class TestRemoveAllAdjacentDuplicatesInStringII_1209 {
 
     @Test
     public void test_1() {
-        RemoveAllAdjacentDuplicatesInStringII_1209 obj = new RemoveAllAdjacentDuplicatesInStringII_1209();
+        _1209_RemoveAllAdjacentDuplicatesInStringII obj = new _1209_RemoveAllAdjacentDuplicatesInStringII();
         Assertions.assertEquals("aa", obj.removeDuplicates("deeedbbcccbdaa", 3));
     }
 
     @Test
     public void test_2() {
-        RemoveAllAdjacentDuplicatesInStringII_1209 obj = new RemoveAllAdjacentDuplicatesInStringII_1209();
+        _1209_RemoveAllAdjacentDuplicatesInStringII obj = new _1209_RemoveAllAdjacentDuplicatesInStringII();
         Assertions.assertEquals("abcd", obj.removeDuplicates("abcd", 2));
     }
 
     @Test
     public void test_3() {
-        RemoveAllAdjacentDuplicatesInStringII_1209 obj = new RemoveAllAdjacentDuplicatesInStringII_1209();
+        _1209_RemoveAllAdjacentDuplicatesInStringII obj = new _1209_RemoveAllAdjacentDuplicatesInStringII();
         Assertions.assertEquals("ps", obj.removeDuplicates("pbbcggttciiippooaais", 2));
     }
 
     @Test
     public void test_4() {
-        RemoveAllAdjacentDuplicatesInStringII_1209 obj = new RemoveAllAdjacentDuplicatesInStringII_1209();
+        _1209_RemoveAllAdjacentDuplicatesInStringII obj = new _1209_RemoveAllAdjacentDuplicatesInStringII();
         Assertions.assertEquals("", obj.removeDuplicates("abcd", 1));
     }
 }

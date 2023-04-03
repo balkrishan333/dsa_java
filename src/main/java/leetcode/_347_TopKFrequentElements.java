@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.*;
 
-public class TopKFrequentElements_347 {
+public class _347_TopKFrequentElements {
 
     public static void main(String[] args) {
-        TopKFrequentElements_347 obj = new TopKFrequentElements_347();
+        _347_TopKFrequentElements obj = new _347_TopKFrequentElements();
 
         int[] nums = {1,1,1,2,2,3};
         int k =2;

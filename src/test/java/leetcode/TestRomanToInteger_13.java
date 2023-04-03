@@ -7,19 +7,19 @@ public class TestRomanToInteger_13 {
 
     @Test
     public void test_1() {
-        RomanToInteger_13 obj = new RomanToInteger_13();
+        _13_RomanToInteger obj = new _13_RomanToInteger();
         Assertions.assertEquals(3, obj.romanToInt("III"));
     }
 
     @Test
     public void test_2() {
-        RomanToInteger_13 obj = new RomanToInteger_13();
+        _13_RomanToInteger obj = new _13_RomanToInteger();
         Assertions.assertEquals(58, obj.romanToInt("LVIII"));
     }
 
     @Test
     public void test_3() {
-        RomanToInteger_13 obj = new RomanToInteger_13();
+        _13_RomanToInteger obj = new _13_RomanToInteger();
         Assertions.assertEquals(1994, obj.romanToInt("MCMXCIV"));
     }
 }

@@ -10,7 +10,7 @@ public class TestImplementstrStr_28 {
         String haystack = "mississippi";
         String needle = "issip";
 
-        ImplementstrStr_28 obj = new ImplementstrStr_28();
+        _28_ImplementstrStr obj = new _28_ImplementstrStr();
 
         Assertions.assertEquals(4, obj.strStr(haystack, needle));
     }
@@ -20,7 +20,7 @@ public class TestImplementstrStr_28 {
         String haystack = "hello";
         String needle = "ll";
 
-        ImplementstrStr_28 obj = new ImplementstrStr_28();
+        _28_ImplementstrStr obj = new _28_ImplementstrStr();
 
         Assertions.assertEquals(2, obj.strStr(haystack, needle));
     }

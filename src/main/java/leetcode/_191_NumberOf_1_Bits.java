@@ -1,9 +1,9 @@
 package leetcode;
 
-public class NumberOf_1_Bits_191 {
+public class _191_NumberOf_1_Bits {
 
     public static void main(String[] args) {
-        NumberOf_1_Bits_191 obj = new NumberOf_1_Bits_191();
+        _191_NumberOf_1_Bits obj = new _191_NumberOf_1_Bits();
         int n = 00000000000000000000000000001011;
 
         System.out.println(obj.hammingWeight(n));

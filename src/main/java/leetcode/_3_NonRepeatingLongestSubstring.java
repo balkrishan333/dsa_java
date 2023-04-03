@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class NonRepeatingLongestSubstring_3 {
+public class _3_NonRepeatingLongestSubstring {
 
     public static void main(String[] args) {
         String s = "abcabcbb";

@@ -5,10 +5,10 @@ import leetcode.common.BinaryTreeNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PathSumIII_437 {
+public class _437_PathSumIII {
 
     public static void main(String[] args) {
-        PathSumIII_437 obj = new PathSumIII_437();
+        _437_PathSumIII obj = new _437_PathSumIII();
 
 //        Integer[] input = {10,5,-3,3,2,null,11,3,-2,null,1};
         Integer[] input = {5,4,8,11,null,13,4,7,2,null,null,5,1};

@@ -2,12 +2,12 @@ package leetcode;
 
 import leetcode.common.BinaryTreeNode;
 
-public class RootToLeafSum_1022 {
+public class _1022_RootToLeafSum {
 
     private int sum;
 
     public static void main(String[] args) {
-        RootToLeafSum_1022 obj = new RootToLeafSum_1022();
+        _1022_RootToLeafSum obj = new _1022_RootToLeafSum();
 
         Integer[] input = {1, 0, 1, 0, 1, 0, 1};
         BinaryTreeNode root = new BinaryTreeNode().createTree(input);

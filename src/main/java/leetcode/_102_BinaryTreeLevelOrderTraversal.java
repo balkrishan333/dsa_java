@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTreeLevelOrderTraversal_102 {
+public class _102_BinaryTreeLevelOrderTraversal {
 
     public static void main(String[] args) {
-        BinaryTreeLevelOrderTraversal_102 obj = new BinaryTreeLevelOrderTraversal_102();
+        _102_BinaryTreeLevelOrderTraversal obj = new _102_BinaryTreeLevelOrderTraversal();
 
         Integer[] input = {3,9,20,null,null,15,7};
         BinaryTreeNode root = new BinaryTreeNode().createTree(input);

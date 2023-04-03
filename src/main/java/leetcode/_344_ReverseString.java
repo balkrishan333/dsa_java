@@ -6,7 +6,7 @@ import java.util.Arrays;
 https://leetcode.com/explore/learn/card/recursion-i/250/principle-of-recursion/1440/
 
  */
-public class ReverseString_344 {
+public class _344_ReverseString {
 
     public static void main(String[] args) {
         char[] chars = {'b','a','l','a'};

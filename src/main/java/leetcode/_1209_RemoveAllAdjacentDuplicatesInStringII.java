@@ -3,10 +3,10 @@ package leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class RemoveAllAdjacentDuplicatesInStringII_1209 {
+public class _1209_RemoveAllAdjacentDuplicatesInStringII {
 
     public static void main(String[] args) {
-        RemoveAllAdjacentDuplicatesInStringII_1209 obj = new RemoveAllAdjacentDuplicatesInStringII_1209();
+        _1209_RemoveAllAdjacentDuplicatesInStringII obj = new _1209_RemoveAllAdjacentDuplicatesInStringII();
 
         String s = "deeedbbcccbdaa";
         int k = 3;

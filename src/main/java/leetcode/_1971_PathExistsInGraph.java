@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class PathExistsInGraph_1971 {
+public class _1971_PathExistsInGraph {
 
     public static void main(String[] args) {
         int n=3, source=0, destination=2;

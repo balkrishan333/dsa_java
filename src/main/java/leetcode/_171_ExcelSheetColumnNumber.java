@@ -1,9 +1,9 @@
 package leetcode;
 
-public class ExcelSheetColumnNumber_171 {
+public class _171_ExcelSheetColumnNumber {
 
     public static void main(String[] args) {
-        ExcelSheetColumnNumber_171 obj = new ExcelSheetColumnNumber_171();
+        _171_ExcelSheetColumnNumber obj = new _171_ExcelSheetColumnNumber();
 
         String title = "ZY";
         System.out.println(obj.titleToNumber(title));

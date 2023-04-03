@@ -2,12 +2,12 @@ package leetcode;
 
 import leetcode.common.BinaryTreeNode;
 
-public class InorderSucessorInBST_510 {
+public class _510_InorderSucessorInBST {
 
     private BinaryTreeNode successor;
 
     public static void main(String[] args) {
-        InorderSucessorInBST_510 obj = new InorderSucessorInBST_510();
+        _510_InorderSucessorInBST obj = new _510_InorderSucessorInBST();
         BinaryTreeNode node = createTree_4();
 
         BinaryTreeNode successor = obj.findSuccessor(node);

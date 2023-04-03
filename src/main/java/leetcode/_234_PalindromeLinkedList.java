@@ -5,11 +5,11 @@ import leetcode.common.ListNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class PalindromeLinkedList_234 {
+public class _234_PalindromeLinkedList {
 
     public static void main(String[] args) {
         ListNode listNode = constructList();
-        PalindromeLinkedList_234 obj = new PalindromeLinkedList_234();
+        _234_PalindromeLinkedList obj = new _234_PalindromeLinkedList();
 
         System.out.println("obj.isPalindrome(listNode) = " + obj.isPalindrome(listNode));
     }

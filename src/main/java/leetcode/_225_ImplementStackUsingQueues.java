@@ -3,12 +3,12 @@ package leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class ImplementStackUsingQueues_225 {
+public class _225_ImplementStackUsingQueues {
 
     private Deque<Integer> queue;
 
     public static void main(String[] args) {
-        ImplementStackUsingQueues_225 obj = new ImplementStackUsingQueues_225();
+        _225_ImplementStackUsingQueues obj = new _225_ImplementStackUsingQueues();
         obj.push(1);
         obj.push(2);
         obj.top();
@@ -16,7 +16,7 @@ public class ImplementStackUsingQueues_225 {
         obj.empty();
     }
 
-    public ImplementStackUsingQueues_225() {
+    public _225_ImplementStackUsingQueues() {
         queue = new ArrayDeque<>();
     }
 

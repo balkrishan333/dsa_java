@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomanToInteger_13 {
+public class _13_RomanToInteger {
 
     private static final Map<Character, Integer> BASE_ROMANS;
 
@@ -19,7 +19,7 @@ public class RomanToInteger_13 {
     }
 
     public static void main(String[] args) {
-        RomanToInteger_13 obj = new RomanToInteger_13();
+        _13_RomanToInteger obj = new _13_RomanToInteger();
         String s = "III";
         System.out.println(obj.romanToInt(s));
     }

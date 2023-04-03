@@ -2,10 +2,10 @@ package leetcode;
 
 import java.util.*;
 
-public class Permutations_46 {
+public class _46_Permutations {
 
     public static void main(String[] args) {
-        Permutations_46 obj = new Permutations_46();
+        _46_Permutations obj = new _46_Permutations();
 
         int[] nums = {1,2,3,4};
 

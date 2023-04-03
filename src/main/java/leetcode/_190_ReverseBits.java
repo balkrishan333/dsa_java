@@ -1,9 +1,9 @@
 package leetcode;
 
-public class ReverseBits_190 {
+public class _190_ReverseBits {
 
     public static void main(String[] args) {
-        ReverseBits_190 obj = new ReverseBits_190();
+        _190_ReverseBits obj = new _190_ReverseBits();
         int n = 43261596;
         System.out.println(obj.reverseBits(n));
     }
