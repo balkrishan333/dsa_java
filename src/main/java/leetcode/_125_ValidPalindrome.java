@@ -1,9 +1,9 @@
 package leetcode;
 
-public class ValidPalindrome_125 {
+public class _125_ValidPalindrome {
 
     public static void main(String[] args) {
-        ValidPalindrome_125 obj = new ValidPalindrome_125();
+        _125_ValidPalindrome obj = new _125_ValidPalindrome();
 //        String s = "A man, a plan, a canal: Panama";
         String s = " ";
 

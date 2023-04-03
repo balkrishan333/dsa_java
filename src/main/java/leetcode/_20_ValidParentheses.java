@@ -3,10 +3,10 @@ package leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class ValidParentheses_20 {
+public class _20_ValidParentheses {
 
     public static void main(String[] args) {
-        ValidParentheses_20 obj = new ValidParentheses_20();
+        _20_ValidParentheses obj = new _20_ValidParentheses();
 
         String s = "()[]{}";
         System.out.println(obj.isValid(s));

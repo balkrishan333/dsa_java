@@ -1,6 +1,6 @@
 package leetcode;
 
-public class ValidPalindrome_680 {
+public class _680_ValidPalindrome {
 
     public static void main(String[] args) {
         String s = "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga";
