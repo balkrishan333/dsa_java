@@ -4,6 +4,8 @@ import java.util.*;
 
 public class _133_CloneGraph {
 
+    private final Map<Integer, Node> processed = new HashMap<>();
+
     public static void main(String[] args) {
         _133_CloneGraph obj = new _133_CloneGraph();
 
@@ -31,8 +33,6 @@ public class _133_CloneGraph {
         Node cloned = obj.cloneGraph(node);
         System.out.println(cloned);
     }
-
-    private final Map<Integer, Node> processed = new HashMap<>();
 
     /*
         Approach: Create a map of al ready cloned nodes
