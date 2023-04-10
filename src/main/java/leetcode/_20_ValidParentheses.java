@@ -16,14 +16,16 @@ public class _20_ValidParentheses {
         Deque<Character> stack = new ArrayDeque<>();
         char[] chars = s.toCharArray();
 
-        for (int i = 0; i < chars.length; i++) {
+        for (char aChar : chars) {
             if (stack.isEmpty()) {
-                stack.push(chars[i]);
+                stack.push(aChar);
             } else {
-                Character pair = getPair(chars[i]);
-                if (pair == null)  {
-                    stack.push(chars[i]);
+                Character pair = getPair(aChar);
+                if (pair == null) {
+                    //push to stack if its open parenthesis
+                    stack.push(aChar);
                 } else {
+                    //pop if its closing parenthesis
                     Character top = stack.pop();
                     if (top != pair) {
                         return false;
