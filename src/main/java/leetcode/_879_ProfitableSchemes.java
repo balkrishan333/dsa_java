@@ -13,6 +13,9 @@ public class _879_ProfitableSchemes {
         System.out.println(obj.profitableSchemes(n, minProfit, group, profit));
     }
 
+    /*
+        Incomplete
+     */
     public int profitableSchemes(int n, int minProfit, int[] group, int[] profit) {
 
         int answer = 0;
