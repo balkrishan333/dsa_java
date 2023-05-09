@@ -12,6 +12,11 @@ public class _54_SpiralMatrix {
         System.out.println(obj.spiralOrder(matrix));
     }
 
+    /*
+        Approach: Traverse the matrix spirally i.e. right, down, left and up. After traversing one direction update the variable i.e.
+        after traversing right, increase row pointer because we are traversing from top and need to move below, after traversing left
+        decrease row pointer because we are traversing from bottom and need to decrease the row pointer. Same for column values
+     */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
         int rowStart=0,rowEnd= matrix.length-1,colStart=0,colEnd=matrix[0].length-1;
