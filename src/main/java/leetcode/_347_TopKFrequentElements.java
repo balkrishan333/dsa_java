@@ -13,20 +13,30 @@ public class _347_TopKFrequentElements {
         System.out.println(Arrays.toString(res));
     }
 
+    /*
+        Approach:
+        1. Count frequency of each element in array
+        2. Push all element in PriorityQueue with comparison set to reverse order
+        3. Before putting the element in PQ, wrap the element and its count in custom class and implement its comparable method to compare
+         on count of elements because we need frequency by count.
+     */
     public int[] topKFrequent(int[] nums, int k) {
 
         Map<Integer, Integer> map = new HashMap<>();
 
+        //count frequency of each element
         for(int i : nums) {
             map.merge(i, 1, Integer::sum);
         }
 
+        //PQ set to poll in reverse order
         PriorityQueue<ElementCountPair> pq = new PriorityQueue<>(Comparator.reverseOrder());
         for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
             pq.add(new ElementCountPair(entry.getKey(), entry.getValue()));
         }
 
         int[] res = new int[k];
+        //poll top k elements
         for(int i = 0; i < k ; i++) {
             res[i] = pq.poll().element;
         }
@@ -34,7 +44,8 @@ public class _347_TopKFrequentElements {
         return res;
     }
 
-    class ElementCountPair implements Comparable<ElementCountPair> {
+    //class with comparator set on frequency of element
+    static class ElementCountPair implements Comparable<ElementCountPair> {
         int element;
         int count;
 
