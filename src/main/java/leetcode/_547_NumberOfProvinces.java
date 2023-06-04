@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class _547_NumberOfProvinces {
 
     public static void main(String[] args) {
