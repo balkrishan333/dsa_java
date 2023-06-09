@@ -11,7 +11,24 @@ public class _744_FindSmallestLetterGreaterThanTarget {
         System.out.println(obj.nextGreatestLetter(letters, target));
     }
 
+    /*
+        Binary search
+     */
     public char nextGreatestLetter(char[] letters, char target) {
+        int left = 0, right = letters.length - 1, mid;
+        while (left <= right) {
+            mid = left + (right - left) / 2;
+            if (letters[mid] <= target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return left >= letters.length ? letters[0] : letters[left];
+    }
+
+    public char nextGreatestLetter_v1(char[] letters, char target) {
         int lo = 0, hi = letters.length;
 
         while (lo < hi) {
