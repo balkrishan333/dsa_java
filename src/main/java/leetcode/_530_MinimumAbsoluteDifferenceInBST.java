@@ -15,7 +15,7 @@ public class _530_MinimumAbsoluteDifferenceInBST {
     }
 
     //since given tree is a BST, we cna use list otherwise we need to use Priority Queue
-    private List<Integer> list = new ArrayList<>();
+    private final List<Integer> list = new ArrayList<>();
 
     /*
         Approach: Inorder traversal with list
