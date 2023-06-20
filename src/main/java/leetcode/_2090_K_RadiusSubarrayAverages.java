@@ -7,8 +7,8 @@ public class _2090_K_RadiusSubarrayAverages {
     public static void main(String[] args) {
         _2090_K_RadiusSubarrayAverages obj = new _2090_K_RadiusSubarrayAverages();
 
-        int[] nums = {7,4,3,9,1,8,5,2,6};
-        int k = 3;
+        int[] nums = {1,11,17,21,29};
+        int k = 4;
         System.out.println(Arrays.toString(obj.getAverages(nums, k)));
     }
 
@@ -19,7 +19,7 @@ public class _2090_K_RadiusSubarrayAverages {
         int[] answer = new int[nums.length];
         Arrays.fill(answer, -1);
 
-        if (k+1 > nums.length) {
+        if (2*k+1 > nums.length) {
             return answer;
         }
 
