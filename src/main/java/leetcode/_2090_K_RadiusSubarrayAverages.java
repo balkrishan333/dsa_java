@@ -12,6 +12,9 @@ public class _2090_K_RadiusSubarrayAverages {
         System.out.println(Arrays.toString(obj.getAverages(nums, k)));
     }
 
+    /*
+        Approach: Sliding Window
+     */
     public int[] getAverages(int[] nums, int k) {
         if (k == 0) {
             return nums;
