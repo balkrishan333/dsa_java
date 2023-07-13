@@ -1,7 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class _207_CourseSchedule {
 
@@ -16,7 +15,42 @@ public class _207_CourseSchedule {
         System.out.println(obj.canFinish(numCourses, prerequisites));
     }
 
+    /*
+        Approach: Topological sort
+
+        There is another approach implemented below but this is preferable due to easier to understand and maintain
+     */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[] inDegree = new int[numCourses];
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        for (int[] prerequisite : prerequisites) {
+            inDegree[prerequisite[0]]++;
+            graph.computeIfAbsent(prerequisite[1], v -> new ArrayList<>()).add(prerequisite[0]);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (inDegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        int nodesLeft = numCourses;
+
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            nodesLeft--;
+            for (Integer adj : graph.getOrDefault(node, new ArrayList<>())) {
+                inDegree[adj]--;
+                if (inDegree[adj] == 0) {
+                    queue.offer(adj);
+                }
+            }
+        }
+        return nodesLeft == 0;
+    }
+
+    public boolean canFinish_v1(int numCourses, int[][] prerequisites) {
 
         if(prerequisites.length == 0) {
             return true;
