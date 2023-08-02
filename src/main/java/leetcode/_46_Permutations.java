@@ -12,33 +12,29 @@ public class _46_Permutations {
         System.out.println(obj.permute(nums));
     }
 
+    /*
+        Approach: BackTracking
+     */
     public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
 
         if (nums == null || nums.length == 0) {
-            List<List<Integer>> result = new ArrayList<>();
             return result;
         }
 
         if (nums.length == 1) {
-            List<List<Integer>> result = new ArrayList<>();
-            List<Integer> list = new LinkedList<>();
-            list.add(nums[0]);
-            result.add(list);
-
+            result.add(List.of(nums[0]));
             return result;
         }
-
         return doPermute(nums, 0, nums.length-1);
     }
 
     private List<List<Integer>> doPermute(int[] nums, int start, int end) {
         List<List<Integer>> result;
 
-        if (end - start == 0) {
+        if (end == start) {
             result = new LinkedList<>();
-            List<Integer> list = new LinkedList<>();
-            list.add(nums[start]);
-            result.add(list);
+            result.add(List.of(nums[start]));
 
             return result;
         }
@@ -59,8 +55,7 @@ public class _46_Permutations {
             iterator.remove();
 
             for (int i = 0; i <= l1.size(); i++) {
-                List<Integer> l2 = new LinkedList<>();
-                l2.addAll(l1);
+                List<Integer> l2 = new LinkedList<>(l1);
                 l2.add(i, element);
                 iterator.add(l2);
             }
