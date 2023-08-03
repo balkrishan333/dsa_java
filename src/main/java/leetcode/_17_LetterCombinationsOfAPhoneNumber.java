@@ -4,6 +4,12 @@ import java.util.*;
 
 public class _17_LetterCombinationsOfAPhoneNumber {
 
+    public static void main(String[] args) {
+        _17_LetterCombinationsOfAPhoneNumber obj = new _17_LetterCombinationsOfAPhoneNumber();
+
+        String digits = "234";
+        System.out.println(obj.letterCombinations(digits));
+    }
     private static final Map<Character, List<String>> MAPPING;
 
     static {
@@ -18,13 +24,6 @@ public class _17_LetterCombinationsOfAPhoneNumber {
         MAPPING.put('9', List.of("w", "x", "y", "z"));
     }
 
-    public static void main(String[] args) {
-        _17_LetterCombinationsOfAPhoneNumber obj = new _17_LetterCombinationsOfAPhoneNumber();
-
-        String digits = "234";
-        System.out.println(obj.letterCombinations(digits));
-    }
-
     public List<String> letterCombinations(String digits) {
 
         if (digits == null || digits.length() == 0) {
@@ -36,10 +35,10 @@ public class _17_LetterCombinationsOfAPhoneNumber {
         }
 
         char[] chars = digits.toCharArray();
-
         Deque<String> result = new LinkedList<>();
-        for (int i = 0; i < chars.length; i++) {
-            List<String> characters = MAPPING.get(chars[i]);
+
+        for (char aChar : chars) {
+            List<String> characters = MAPPING.get(aChar);
 
             if (result.size() == 0) {
                 for (String ch : characters) {
@@ -48,24 +47,20 @@ public class _17_LetterCombinationsOfAPhoneNumber {
             } else {
                 int size = result.size();
                 /*
-                    Take out all elements fro queue until length is less than desired
+                    Take out all elements from queue until length is less than desired,
                     and we need to do this for all elements which are in queue
-                    before a iteration starts
+                    before an iteration starts
                  */
-                while (result.peek().length() < digits.length() && size > 0) {
+                while (result.peek() != null && result.peek().length() < digits.length() && size > 0) {
                     String str = result.poll();
-                    for (int j = 0; j < characters.size(); j++) {
-                        StringBuilder sb = new StringBuilder(str);
-                        sb.append(characters.get(j));
-                        result.offer(sb.toString());
+                    for (String character : characters) {
+                        result.offer(str + character);
                     }
                     size--;
                 }
             }
         }
-        List<String> l1 = new LinkedList<>();
-         l1.addAll(result);
 
-         return l1;
+        return new LinkedList<>(result);
     }
 }
