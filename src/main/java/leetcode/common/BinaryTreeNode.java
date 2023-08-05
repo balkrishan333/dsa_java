@@ -13,7 +13,12 @@ public class BinaryTreeNode {
     public BinaryTreeNode parent; //Add for inorder successor LC 510
 
     public BinaryTreeNode() {}
-    public BinaryTreeNode(int x) { val = x; }
+    public BinaryTreeNode(int val) { this.val = val; }
+    public BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
 
     public BinaryTreeNode createTree(Integer[] input) {
         BinaryTreeNode root = null;
