@@ -14,7 +14,7 @@ public class _1658_MinimumOperations_To_Reduce_X_To_Zero {
 
     /*
       We need to find minimum elements from ends whose sum is equal to x.
-      That translates to we need to find out max len with sum = arraysum - x in middle
+      That translates to, we need to find out max len with sum = arraysum - x in middle
 
       Once we do this rest of elements from end will have sum x
      */
@@ -27,25 +27,11 @@ public class _1658_MinimumOperations_To_Reduce_X_To_Zero {
 
         //target to find in middle of array
         int target = arraySum -x;
-
         int start = 0, end =0, sum =0, windowSize =0;
 
         for (int i = 0; i < nums.length; i++) {
 
-           //Not required
-            /* if (nums[i] == target) {
-                windowSize = Math.max(windowSize, 1); // single element start and end are same. so window size = 1
-                if (windowSize == 1) {
-                    //if current element equals target, set start and end to this element and sum equal to target
-                    start = i;
-                    end = i;
-                    sum = target;
-                }
-                continue;
-            }*/
-
             sum += nums[i];
-
             while (sum > target && start < nums.length) {
                 sum = sum - nums[start];
                 start++;
@@ -56,7 +42,6 @@ public class _1658_MinimumOperations_To_Reduce_X_To_Zero {
                 windowSize = Math.max(windowSize, end-start+1); // +1 to account for 0 based index
             }
         }
-
         return windowSize == 0 ? -1 : nums.length - windowSize;
     }
 }
