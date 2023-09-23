@@ -20,14 +20,11 @@ public class _3_NonRepeatingLongestSubstring {
             char ch = s.charAt(i);
             int index = symbols[ch];
 
-            if(index == -1) {
-                symbols[ch] = i;
-                continue;
-            }
-
-            if(index >= start) {
-                length = Math.max(length, i-start);
-                start = index+1;
+            if (index != -1) {
+                if(index >= start) {
+                    length = Math.max(length, i-start);
+                    start = index+1;
+                }
             }
             symbols[ch] = i;
         }
