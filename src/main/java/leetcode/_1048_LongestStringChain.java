@@ -25,9 +25,10 @@ public class _1048_LongestStringChain {
 
             for (int i = 0; i < str.length(); i++) {
                 StringBuilder sb = new StringBuilder(str);
-                Integer chain = map.get(sb.deleteCharAt(i).toString());
-                if (chain != null) {
-                    chain = Math.max(map.get(str), ++chain);
+                int chain = map.getOrDefault(sb.deleteCharAt(i).toString(), -1);
+                if (chain != -1) {
+                    chain++;
+                    chain = Math.max(map.get(str), chain);
                     map.put(str, chain);
                     result = Math.max(result, chain);
                 }
