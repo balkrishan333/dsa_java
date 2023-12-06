@@ -11,39 +11,25 @@ public class _3_LongestSubstringWithoutRepeatingCharacters {
         System.out.println(obj.lengthOfLongestSubstring(s));
     }
 
-    public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
+    public static int lengthOfLongestSubstring(String s) {
+        int[] symbols = new int[255];
+        int start = 0, length =0;
+        Arrays.fill(symbols, -1);
 
-        if (s.length() == 1) {
-            return 1;
-        }
+        for(int i =0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            int index = symbols[ch];
 
-        char[] chars = s.toCharArray();
-        int[] indexs = new int[255];
-
-        Arrays.fill(indexs, -1);
-        int length = 0, start = 0, end = -1;
-
-        for (int i = 0; i < chars.length; i++) {
-            int index = indexs[chars[i]];
-
-            if (index == -1 || index < start) {
-                end++;
-            } else {
-                // +1 because index are zero based
-                int currLength = (i - 1) - start + 1;
-                length = Math.max(length, currLength);
-                //start from next character which was just found
-                start = index + 1;
-                end = i;
+            if (index != -1) {
+                if(index >= start) {
+                    length = Math.max(length, i-start);
+                    start = index+1;
+                }
             }
-            indexs[chars[i]] = i;
+            symbols[ch] = i;
         }
 
-        // +1 because index are zero based
-        length = Math.max(length, end - start + 1);
+        length = Math.max(length, s.length()-start);
 
         return length;
     }
