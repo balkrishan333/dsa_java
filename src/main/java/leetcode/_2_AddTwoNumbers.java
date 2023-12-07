@@ -19,8 +19,6 @@ public class _2_AddTwoNumbers {
 
         int carry = 0;
         while(l1 != null || l2 != null || carry == 1) {
-            int val1 = 0, val2 = 0;
-
             int sum = carry;
             if(l1 != null) {
                 sum  += l1.val;
