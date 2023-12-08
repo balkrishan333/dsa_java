@@ -5,7 +5,7 @@ public class _5_LongestPalindromicSubstring {
     public static void main(String[] args) {
         _5_LongestPalindromicSubstring obj = new _5_LongestPalindromicSubstring();
 
-        String s = "aacabdkacaa";
+        String s = "nitin";
         System.out.println(obj.longestPalindrome_v3(s));
     }
 
@@ -25,6 +25,9 @@ public class _5_LongestPalindromicSubstring {
             length = Math.max(odd, even);
 
             if (length > end - start) {
+                //(length -1) is required to accommodate for even length string. When we start calculating even length palindrome, we
+                // start from i and use i+1 as right but we do calculation with i only. So we have 1 extra char on right for even length
+                // palindrome.
                 start = i - (length-1)/2;
                 end = i + (length/2);
             }
@@ -38,7 +41,7 @@ public class _5_LongestPalindromicSubstring {
             left--;
             right++;
         }
-        return right-left-1;
+        return right-left-1; // simplification of (right - 1) - (left +1) + 1
     }
 
     public String longestPalindrome(String s) {
