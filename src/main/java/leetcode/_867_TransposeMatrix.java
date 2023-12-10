@@ -26,7 +26,7 @@ public class _867_TransposeMatrix {
             return result;
         } else {
             //leave diagonals as it is
-            //work only for i < j otherwise we will end up swapping swapping element twice
+            //work only for i < j otherwise we will end up swapping element twice
             for(int i =0; i < m; i++) {
                 for(int j =0; j < n; j++) {
                     if(i < j) {
