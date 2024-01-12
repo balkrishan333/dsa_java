@@ -12,18 +12,18 @@ public class _1704_DetermineIfStringHalvesAreAlike {
     public boolean halvesAreAlike(String s) {
         int len = s.length();
         int i = 0, j = len-1;
-        int left = 0, right = 0;
+        int firstHalfVowelCnt = 0, secondHalfVowelCnt = 0;
 
         for (; i < len/2 && j >= len/2 ; i++,j--) {
             if (isVowel(s.charAt(i))) {
-                left++;
+                firstHalfVowelCnt++;
             }
 
             if (isVowel(s.charAt(j))) {
-                right++;
+                secondHalfVowelCnt++;
             }
         }
-        return left == right;
+        return firstHalfVowelCnt == secondHalfVowelCnt;
     }
 
     private boolean isVowel(char ch) {
