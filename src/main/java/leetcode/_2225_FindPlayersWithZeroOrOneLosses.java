@@ -15,18 +15,20 @@ public class _2225_FindPlayersWithZeroOrOneLosses {
 
     public List<List<Integer>> findWinners(int[][] matches) {
         int[] losses = new int[100000+1];
-        Arrays.fill(losses, -1);
+        Arrays.fill(losses, -1); // -1 indicates that player has not played any match
 
-        for (int i = 0; i < matches.length; i++) {
-            int winner = matches[i][0];
-            int loser = matches[i][1];
+        for (int[] match : matches) {
+            int winner = match[0];
+            int loser = match[1];
 
+            //make losses to zero to separate it from player who has played a match and the one who has not played a match
             if (losses[winner] == -1) {
                 losses[winner]++;
             }
 
+            //first time increase by 2 to make loss 1 (-1 indicates player has not played a match), 2nd time onwards increase by 1 only
             if (losses[loser] == -1) {
-                losses[loser] +=2;
+                losses[loser] += 2;
             } else {
                 losses[loser]++;
             }
