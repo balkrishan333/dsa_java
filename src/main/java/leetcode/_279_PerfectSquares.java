@@ -9,7 +9,6 @@ public class _279_PerfectSquares {
         System.out.println(obj.numSquares(n));
 
     }
-
     public int numSquares(int n) {
         int[] dp = new int[n+1];
         dp[0] = 0;
@@ -22,7 +21,6 @@ public class _279_PerfectSquares {
 
                 count += dp[i-j*j];
                 min = Math.min(min, count);
-
             }
             dp[i] = min;
         }
