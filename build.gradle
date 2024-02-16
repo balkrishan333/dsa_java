@@ -23,6 +23,8 @@ dependencies {
     api group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     api group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
     api group: 'log4j', name: 'log4j', version: '1.2.17'
+    api group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:22.0'
