@@ -18,7 +18,9 @@ public class _997_FindThTownJudge {
         int[] count = new int[n+1];
 
         for (int[] pair : trust) {
-            count[pair[0]]--;
+            count[pair[0]]--; //this is required because, judge does not trust anyone so, we need to decrease the count of person who
+            // trusts anyone otherwise this can give wrong result as other (n-1) person might trust this person and can be a candidate
+            // for answer we don't decrement.
             count[pair[1]]++;
         }
 
