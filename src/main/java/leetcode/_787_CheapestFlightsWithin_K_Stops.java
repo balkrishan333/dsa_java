@@ -58,11 +58,11 @@ public class _787_CheapestFlightsWithin_K_Stops {
             while (size > 0) {
                 int[] node = pq.poll();
 
-                int dist = node[1];
+                int currCost = node[1];
                 //get all flights
                 for (int[] flight : graph.get(node[0])) {
                     int flightCost = flight[2]; // get cost to destination as this is the node to which we are arriving
-                    int newCost = dist + flightCost;
+                    int newCost = currCost + flightCost;
 
                     //if new cost is less current cost, update it and put the node back in queue
                     if (newCost < cost[flight[1]]) {
