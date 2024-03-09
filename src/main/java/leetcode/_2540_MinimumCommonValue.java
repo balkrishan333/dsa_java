@@ -1,0 +1,29 @@
+package leetcode;
+
+public class _2540_MinimumCommonValue {
+
+    public static void main(String[] args) {
+        _2540_MinimumCommonValue obj = new _2540_MinimumCommonValue();
+
+        int[] nums1 = {1,2,3};
+        int[] nums2 = {2,4};
+        System.out.println(obj.getCommon(nums1, nums2));
+    }
+
+    public int getCommon(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int m = nums2.length;
+
+        for (int i = 0, j = 0; i < n && j <m; ) {
+            if (nums1[i] == nums2[j]) {
+                return nums1[i];
+            } else if (nums1[i] < nums2[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        return -1;
+    }
+}
+
