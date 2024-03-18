@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class _452_MinimumNumberOfArrowsToBurstBalloons {
 
@@ -14,9 +15,7 @@ public class _452_MinimumNumberOfArrowsToBurstBalloons {
 
     public int findMinArrowShots(int[][] points) {
 
-        Arrays.sort(points, (a,b)-> {
-            return Integer.compare(a[1], b[1]);
-        });
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
 
         int arrows = 1;
         int end = points[0][1];
