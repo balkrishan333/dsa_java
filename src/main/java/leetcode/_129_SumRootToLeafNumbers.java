@@ -22,7 +22,6 @@ public class _129_SumRootToLeafNumbers {
         }
 
         preorder(root, new StringBuilder());
-//        System.out.println(numbers);
         return numbers.stream().mapToInt(num-> num).sum();
     }
 
@@ -32,7 +31,7 @@ public class _129_SumRootToLeafNumbers {
         }
 
         StringBuilder curr = sb.append(node.val);
-        if (node.left == null && node.right == null && sb.length() > 0) {
+        if (node.left == null && node.right == null && !sb.isEmpty()) {
             numbers.add(Integer.parseInt(sb.toString()));
         }
         preorder(node.left, new StringBuilder(curr));
