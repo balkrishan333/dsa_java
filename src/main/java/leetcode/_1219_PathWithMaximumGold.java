@@ -8,56 +8,45 @@ public class _1219_PathWithMaximumGold {
     public static void main(String[] args) {
         _1219_PathWithMaximumGold obj = new _1219_PathWithMaximumGold();
 
-        int[][] grid = {{1,0,7},{2,0,6},{3,4,5},{0,3,0},{9,0,20}};
+//        int[][] grid = {{1,0,7},{2,0,6},{3,4,5},{0,3,0},{9,0,20}};
+        int[][] grid = {{0,6,0},{5,8,7},{0,9,0}};
         System.out.println(obj.getMaximumGold(grid));
     }
 
-    private int answer = Integer.MIN_VALUE;
     public int getMaximumGold(int[][] grid) {
-        int m = grid.length;
-        int n = grid[0].length;
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int maxGold = 0;
 
-        boolean[][] visited = new boolean[m][n];
-        Queue<int[]> queue = new ArrayDeque<>();
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] == 0) {
-                    visited[i][j] = true;
-                } else {
-                    queue.offer(new int[]{i, j});
-                }
+        // Search for the path with the maximum gold starting from each cell
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                maxGold = Math.max(maxGold, dfsBacktrack(grid, rows, cols, row, col));
             }
         }
-
-        while (!queue.isEmpty()) {
-            int[] top = queue.poll();
-            int i = top[0];
-            int j = top[1];
-
-            if (!visited[i][j]) {
-                visited[i][j] = true;
-                int curr = traverse(grid, i, j, grid[i][j], visited);
-                answer = Math.max(answer, curr);
-            }
-        }
-        return answer;
+        return maxGold;
     }
 
-    private int traverse(int[][] grid, int i, int j, int curr, boolean[][] visited) {
-        for (int[] pos : new int[][]{{0,-1}, {0,1}, {-1,0}, {1,0}}) {
-            int row = i + pos[0];
-            int col = j + pos[1];
-
-            if (row >= 0 && row < grid.length && col >= 0 && col < grid[0].length) {
-                if (!visited[row][col]) {
-                    curr += grid[row][col];
-                    visited[row][col] = true;
-                    answer = Math.max(answer, curr);
-                    traverse(grid, row, col, curr, visited);
-                }
-            }
+    private int dfsBacktrack(int[][] grid, int rows, int cols, int row, int col) {
+        // Base case: this cell is not in the matrix or this cell has no gold
+        if (row < 0 || col < 0 || row == rows || col == cols || grid[row][col] == 0) {
+            return 0;
         }
-        return curr;
+        int maxGold = 0;
+
+        // Mark the cell as visited and save the value
+        int originalVal = grid[row][col];
+        grid[row][col] = 0;
+
+        // Backtrack in each of the four directions
+        for (int[] direction : new int[][]{{0,1},{0,-1},{1,0},{-1,0}}) {
+            maxGold = Math.max(maxGold,
+                    dfsBacktrack(grid, rows, cols, direction[0] + row,
+                            direction[1] + col));
+        }
+
+        // Set the cell back to its original value
+        grid[row][col] = originalVal;
+        return maxGold + originalVal;
     }
 }
