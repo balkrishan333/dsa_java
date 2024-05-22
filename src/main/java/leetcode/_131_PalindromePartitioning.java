@@ -16,16 +16,15 @@ public class _131_PalindromePartitioning {
     }
 
     public List<List<String>> partition(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return answer;
         }
-
         backtrack(s, new ArrayList<>());
         return answer;
     }
 
     private void backtrack(String str, List<String> seq) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             answer.add(new ArrayList<>(seq));
             return;
         }
@@ -39,18 +38,16 @@ public class _131_PalindromePartitioning {
             if (!isPalindrome(subStr)) {
                 continue;
             }
-
             seq.add(subStr);
             backtrack(str.substring(endIndex), seq);
-            seq.remove(seq.size()-1);
+            seq.removeLast();
         }
     }
 
     private boolean isPalindrome(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             return false;
         }
-
         int left = 0; int right = str.length()-1;
         while (left <= right) {
             if (str.charAt(left) != str.charAt(right)) {
