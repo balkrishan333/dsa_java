@@ -19,10 +19,10 @@ public class _502_IPO {
     /*
         Approach:
 
-        Create 2D array (first element capital and 2nd profit). Sort the array by profit in revere order (max first)
+        Create 2D array (first element capital and 2nd profit). Sort the array by profit in reverse order (max first)
 
-        Add all project to priority queue. take out the top element from queue, if capital is less than  or equal to w
-        add the profit, else park it in list to add it to queue later on (this is required because this project is not
+        Add all projects to the priority queue. take out the top element from queue, if capital is less than  or equal to w
+        add the profit, else park it in the list to add it to queue later on (this is required because this project is not
         considered as of now due to less capital but can be considered later on when we have more capital)
 
         Repeat the above k times.
@@ -45,7 +45,7 @@ public class _502_IPO {
         while (!pq.isEmpty() && k > 0) {
             int[][] project = pq.poll();
             //if capital is less than or equal to w, consider the project, decrement k amd add all popped elements
-            //which were not considered
+            //that were not considered
             if (project[0][0] <= w) {
                 w += project[0][1];
                 k--;
