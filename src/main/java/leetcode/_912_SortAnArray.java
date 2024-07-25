@@ -38,7 +38,7 @@ public class _912_SortAnArray {
         }
 
         for (int i = 0; i < rightArr.length; i++) {
-            rightArr[i] = nums[mid+i+1];
+            rightArr[i] = nums[mid+1+i];
         }
 
         int i = 0, j = 0;
@@ -64,7 +64,7 @@ public class _912_SortAnArray {
     }
 
     /*
-        Since worst case complexity is O(n^2), solution times out
+        Since the worst case complexity is O(n^2), solution times out
      */
     private void quickSort(int[] nums, int lo, int hi) {
         if (lo > hi) {
@@ -79,7 +79,7 @@ public class _912_SortAnArray {
                 swap(nums, i, ++index);
             }
         }
-        swap(nums, ++index, hi); //bring pivot to correct position
+        swap(nums, ++index, hi); //bring pivot to the correct position
         quickSort(nums, lo, index-1);
         quickSort(nums, index+1, hi);
     }
