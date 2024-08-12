@@ -24,7 +24,7 @@ public class _703_KthLargestElementInAStream {
         them till size of queue is more than k, so that we have only k elements in PQ
 
         Whenever an element is added, check if it is greater than
-        the shortest element (first oin PQ), remove the shortest and add incoming element and return element at top of queue.
+        the shortest element (first in PQ), remove the shortest and add incoming element and return element at top of queue.
      */
     public _703_KthLargestElementInAStream(int k, int[] nums) {
         Arrays.stream(nums).forEach(priorityQueue::add);
