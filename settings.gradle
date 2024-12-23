@@ -23,4 +23,4 @@ pluginManagement {
       }
     }
 }
-rootProject.name = 'problems-implementation'
+rootProject.name = 'dsa_java'
