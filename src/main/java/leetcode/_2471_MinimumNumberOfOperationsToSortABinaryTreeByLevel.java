@@ -11,6 +11,17 @@ public class _2471_MinimumNumberOfOperationsToSortABinaryTreeByLevel {
         System.out.println(obj.minimumOperations(new BinaryTreeNode().createTree(new Integer[]{1,4,3,7,6,8,5,null,null,null,null,9,null,10})));
     }
 
+    /*
+        Approach:
+
+        If elements are not at their correct position, there will be a cycle. we need to find the cycle size.
+        No. of swaps required = cycle size - 1
+
+        1. Find elements at each level.
+        2. Find swaps required to sort elements at each level.
+        3. Return total swaps.
+     */
+
     public int minimumOperations(BinaryTreeNode root) {
         int swaps = 0;
         Queue<BinaryTreeNode> queue = new LinkedList<>();
