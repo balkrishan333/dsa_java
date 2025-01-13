@@ -9,6 +9,13 @@ public class _3223_MinimumLengthOfStringAfterOperations {
         System.out.println(obj.minimumLength(s));
     }
 
+    /*
+        Approach:
+        If a character appears an odd number of times, we can keep exactly one instance of it, and remove the rest.
+
+        If a character appears an even number of times, we can keep two instances of it—one on the left side and
+        one on the right side, ensuring a valid operation.
+     */
     public int minimumLength(String s) {
         int[] charFrequency = new int[26];
 
