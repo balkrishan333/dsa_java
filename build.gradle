@@ -43,7 +43,9 @@ dependencies {
     //Junit 5
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
+}
 
-
+test {
+    useJUnitPlatform()
 }
 
