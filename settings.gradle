@@ -15,12 +15,12 @@ include 'api'
 include 'services:webservice'
 */
 
-pluginManagement {
-    repositories {
-      maven {
-        name 'central'
-        url 'https://repo1.uhc.com/artifactory/repo/'
-      }
-    }
-}
+//pluginManagement {
+//    repositories {
+//      maven {
+//        name 'central'
+//        url 'https://repo1.uhc.com/artifactory/repo/'
+//      }
+//    }
+//}
 rootProject.name = 'dsa_java'
