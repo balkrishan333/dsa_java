@@ -10,20 +10,20 @@ public class _2125_NumberOfLaserBeamsInABank {
     }
 
     public int numberOfBeams(String[] bank) {
-        int prev = 0;
+        int prevRowDeviceCount = 0;
         int answer = 0;
 
         for (String s : bank) {
-            int count = 0;
+            int currRowDeviceCount = 0;
             char[] floor = s.toCharArray();
             for (char c : floor) {
                 if (c == '1') {
-                    count++;
+                    currRowDeviceCount++;
                 }
             }
-            if (count > 0) {
-                answer = answer + prev * count;
-                prev = count;
+            if (currRowDeviceCount > 0) {
+                answer = answer + prevRowDeviceCount * currRowDeviceCount;
+                prevRowDeviceCount = currRowDeviceCount;
             }
         }
         return answer;
