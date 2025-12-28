@@ -12,6 +12,9 @@ public class _1351_CountNegativeNumbersInASortedMatrix {
 
     /*
         Approach: Binary Search
+
+        Find index of first -ve number in the row. all numbers to right of it are also -ve. After search since left will
+        point to first -ve index, total no. of -ve numbers = n-left
      */
     public int countNegatives(int[][] grid) {
         int n = grid[0].length;
@@ -31,6 +34,10 @@ public class _1351_CountNegativeNumbersInASortedMatrix {
             }
 
             if (left < n) {
+                /*
+                left points to first -ve number, all numbers to right of left are -ve, to fine total -ve numbers
+                total - first_index
+                */
                 count += n - left;
             }
         }
