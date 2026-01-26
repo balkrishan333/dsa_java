@@ -23,22 +23,13 @@ public class _1200_MinimumAbsoluteDifference {
         for (int i = 1; i < arr.length; i++) {
             int diff = arr[i] - arr[i-1];
             if (diff == min) {
-                addToList(arr, result, i);
+                result.add(List.of(arr[i-1], arr[i]));
             } else if (diff < min) {
                 result.clear();
                 min = diff;
-
-                addToList(arr, result, i);
+                result.add(List.of(arr[i-1], arr[i]));
             }
         }
         return result;
-    }
-
-    private void addToList(int[] arr, List<List<Integer>> result, int i) {
-        List<Integer> l1 = new ArrayList<>();
-        l1.add(arr[i-1]);
-        l1.add(arr[i]);
-
-        result.add(l1);
     }
 }
