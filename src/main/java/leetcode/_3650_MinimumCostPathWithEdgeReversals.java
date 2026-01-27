@@ -35,13 +35,13 @@ public class _3650_MinimumCostPathWithEdgeReversals {
         Arrays.fill(nodeCosts, Integer.MAX_VALUE);
         nodeCosts[0] = 0;
 
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
-        priorityQueue.offer(new int[]{0,0});
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+        priorityQueue.offer(new int[]{0,0}); //[node, cost]
 
         while (!priorityQueue.isEmpty()) {
             int[] currentNode = priorityQueue.poll();
-            int cost = currentNode[0];
-            int node = currentNode[1];
+            int node = currentNode[0];
+            int cost = currentNode[1];
 
             if (node == n-1) {
                 return cost;
@@ -52,14 +52,14 @@ public class _3650_MinimumCostPathWithEdgeReversals {
             }
 
             visited[node] = true;
-            for (int[] edge : graph[node]) {
-                int newCost = edge[0];
-                int newNode = edge[1];
+            for (int[] neighbor : graph[node]) {
+                int newNode = neighbor[0];
+                int newCost = neighbor[1];
 
                 if (cost + newCost < nodeCosts[newNode]) {
-                    nodeCosts[newNode] = nodeCosts[node] + newCost;
+                    nodeCosts[newNode] = cost + newCost;
+                    priorityQueue.add(new int[]{newNode, nodeCosts[newNode]});
                 }
-                priorityQueue.add(new int[]{cost, node});
             }
         }
         return -1;
