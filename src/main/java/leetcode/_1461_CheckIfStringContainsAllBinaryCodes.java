@@ -11,27 +11,39 @@ public class _1461_CheckIfStringContainsAllBinaryCodes {
     }
 
     public boolean hasAllCodes(String s, int k) {
-        if (s.length() < k) {
-            return false;
-        }
+        int n = s.length();
 
-        int max = 1 << k;
-        boolean[] exists = new boolean[max];
+        // Impossible cases
+        if (k > n) return false;
 
-        for (int i = 0; i <= s.length() - k; i++) {
-            String str = s.substring(i, i+k);
-            int val = Integer.valueOf(str, 2);
+        int totalNeeded = 1 << k;  // 2^k
 
-            if (val <= max) {
-                exists[val] = true;
+        // If total substrings < total combinations, impossible
+        if (n - k + 1 < totalNeeded) return false;
+
+        boolean[] seen = new boolean[totalNeeded];
+        int mask = totalNeeded - 1;  // keeps last k bits. mask is all 1's and is the max value from k bits
+        int currentValue = 0;
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            // Shift left and add new bit
+            currentValue = ((currentValue << 1) & mask)
+                    | (s.charAt(i) - '0');
+
+            // Start counting only after first k-1 chars
+            if (i >= k - 1) {
+                if (!seen[currentValue]) {
+                    seen[currentValue] = true;
+                    count++;
+
+                    if (count == totalNeeded) {
+                        return true;
+                    }
+                }
             }
         }
 
-        for (int i = 0; i < exists.length; i++) {
-            if (!exists[i]) {
-                return false;
-            }
-        }
-        return true;
+        return false;
     }
 }
