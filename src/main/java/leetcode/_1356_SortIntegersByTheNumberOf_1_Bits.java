@@ -14,6 +14,18 @@ public class _1356_SortIntegersByTheNumberOf_1_Bits {
     public int[] sortByBits(int[] arr) {
         Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);
         Arrays.sort(boxed, (a, b) -> {
+            if (Integer.bitCount(a) == Integer.bitCount(b)) {
+                return a - b;
+            }
+            return Integer.bitCount(a) - Integer.bitCount(b);
+        });
+
+        return Arrays.stream(boxed).mapToInt(Integer::intValue).toArray();
+    }
+
+    public int[] sortByBits_v1(int[] arr) {
+        Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+        Arrays.sort(boxed, (a, b) -> {
             if (bitCount(a) == bitCount(b)) {
                 return Integer.compare(a, b);
             }
