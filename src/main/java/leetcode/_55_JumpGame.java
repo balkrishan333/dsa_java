@@ -10,27 +10,34 @@ public class _55_JumpGame {
     }
 
     public boolean canJump(int[] nums) {
+        // Single element array — already at the last index
         if(nums.length == 1) {
             return true;
         }
 
+        // If first element is 0, we can never leave index 0
         if (nums[0] == 0) {
             return false;
         }
+
+        // Tracks the farthest index we can reach from any position seen so far
         int maxReached = 0;
         for (int i = 0; i < nums.length; i++) {
-
+            // If current index is beyond what we can reach, there's a gap (caused by zeros)
+            // e.g., [1,0,2] → at i=2, maxReached is still 1, so we can't get here
             if (i > maxReached) {
                 return  false;
             }
 
-            maxReached = Math.max(maxReached, nums[i] + i);
+            // From position i, we can reach up to i + nums[i]
+            maxReached = Math.max(maxReached, i + nums[i]);
 
+            // If our reach covers the last index, we can land on it
+            // (we don't have to jump the full nums[i], we can choose a shorter jump)
             if (maxReached >= nums.length-1) {
                 return true;
             }
         }
-
         return maxReached >= nums.length-1;
     }
 }
